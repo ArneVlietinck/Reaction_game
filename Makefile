@@ -19,23 +19,25 @@ SUBDIRS := $(KPATH)
 SRC :=                                  \
 main.cpp    \
 led.cpp \
-game.cpp 
+game.cpp \
+player.cpp \
+adpcm.c
 ##
 ## List here additional static libraries with relative path
 ##
-LIBS :=  
+LIBS :=
 
 ##
 ## List here additional include directories (in the form -Iinclude_dir)
 ##
-INCLUDE_DIRS :=  
- 
+INCLUDE_DIRS :=
+
 ##############################################################################
 ## You should not need to modify anything below                             ##
 ##############################################################################
 
 ifeq ("$(VERBOSE)","1")
-Q := 
+Q :=
 ECHO := @true
 else
 Q := @

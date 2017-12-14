@@ -6,6 +6,8 @@
 #include <miosix.h>
 #include "led.h"
 #include "game.h"
+#include "player.h"
+#include "Buzzer.h"
 using namespace miosix;
 
 /*
@@ -48,7 +50,9 @@ int main()
         }
         if(button::value()==1)
         {
-            blinkingAll();
+          blinkingAll();
+          ADPCMSound sound(Buzzer_bin,Buzzer_bin_len);
+          Player::instance().play(sound);
         }
         //thread->join();
     }
