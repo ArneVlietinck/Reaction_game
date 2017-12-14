@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * File:   led.cpp
+ * Authors: Simon Mastrodicasa & Arne Vlietinck
  */
 #include "led.h"
 #include "game.h"
@@ -11,7 +10,7 @@ void initLeds()
 {
     greenLed::mode(Mode::OUTPUT);
     orangeLed::mode(Mode::OUTPUT);
-    redLed::mode(Mode::OUTPUT);	
+    redLed::mode(Mode::OUTPUT);
     blueLed::mode(Mode::OUTPUT);
 }
 
@@ -19,13 +18,13 @@ void blinkingAll()
 {
     //Gameover when game=1
     game=0;
-    
+
     int currentLed=BLUE;
     //The further the game, the shorter the time between an on/off
     int sleepTime= 600-30*difficulty;
     if (sleepTime<0)
         sleepTime=0;
-        
+
     while(currentLed==BLUE && game!=GAMEOVER)
     {
     blueLed::high();    //Turn the LED on
@@ -34,7 +33,7 @@ void blinkingAll()
     Thread::sleep(sleepTime); //Wait sleepTimems
     currentLed=shouldRepeat(currentLed);
     }
-    
+
     while(currentLed==GREEN && game!=GAMEOVER)
     {
     greenLed::high();    //Turn the LED on
@@ -52,7 +51,7 @@ void blinkingAll()
     Thread::sleep(sleepTime); //Wait sleepTimems
     currentLed=shouldRepeat(currentLed);
     }
-    
+
     while(currentLed==RED && game!=GAMEOVER)
     {
     redLed::high();    //Turn the LED on
@@ -61,22 +60,22 @@ void blinkingAll()
     Thread::sleep(sleepTime); //Wait sleepTimems
     currentLed=shouldRepeat(currentLed);
     }
-    
+
 }
 
 void turnAllOn()
 {
-    redLed::high(); 
-    blueLed::high(); 
-    greenLed::high(); 
-    orangeLed::high(); 
+    redLed::high();
+    blueLed::high();
+    greenLed::high();
+    orangeLed::high();
 }
 void turnAllOff()
 {
-    redLed::low(); 
-    blueLed::low(); 
-    greenLed::low(); 
-    orangeLed::low(); 
+    redLed::low();
+    blueLed::low();
+    greenLed::low();
+    orangeLed::low();
 }
 void gameOver()
 {
