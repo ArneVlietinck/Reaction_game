@@ -10,10 +10,17 @@
 * @return A boolean which tells if the led should blink again.
 * @note False should happen more than true.
 */
-//TODO
 bool shouldBlinkAgain()
 {
-    return false;
+    int randomval = rand() % 10;
+    if(randomval < 3)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
 }
 
 /**
