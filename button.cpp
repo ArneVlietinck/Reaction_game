@@ -1,30 +1,51 @@
-/*
- * File: button.cpp
- * Authors: Simon Mastrodicasa & Arne Vlietinck
- */
+
 #include "button.h"
+#include <miosix.h>
+#include <miosix/kernel/scheduler/scheduler.h>
 
-/*
- * Initialisation of the button in input mode.
- */
-void initButton()
+using namespace miosix;
+
+typedef Gpio<GPIOA_BASE,0> button;
+
+static Thread *waiting=0;
+extern bool action; 
+
+void __attribute__((naked)) EXTI0_IRQHandler()
 {
-    button::mode(Mode::INPUT);
+    saveContext();
+    asm volatile("bl _Z16EXTI0HandlerImplv");
+    action=true;
+    restoreContext();
 }
 
-/*
- * Check if the button is pushed.
- */
-void checkButton()
+void __attribute__((used)) EXTI0HandlerImpl()
 {
-  while(button::value()==0) Thread::sleep(10);
+    EXTI->PR=EXTI_PR_PR0;
+
+    if(waiting==0) return;
+    waiting->IRQwakeup();
+    if(waiting->IRQgetPriority()>Thread::IRQgetCurrentThread()->IRQgetPriority())
+		Scheduler::IRQfindNextThread();
+    waiting=0;
 }
 
-/*
- * Check if the button is pushed and chance the action to true.
- */
-void checkAction()
+void configureButtonInterrupt()
 {
-  while(button::value()==0) Thread::sleep(10);
-  action = true;
+    button::mode(Mode::INPUT_PULL_DOWN);
+    EXTI->IMR |= EXTI_IMR_MR0;
+    EXTI->RTSR |= EXTI_RTSR_TR0;
+    NVIC_EnableIRQ(EXTI0_IRQn);
+    NVIC_SetPriority(EXTI0_IRQn,15); //Low priority
+}
+
+void waitForButton()
+{
+    FastInterruptDisableLock dLock;
+    waiting=Thread::IRQgetCurrentThread();
+    while(waiting)
+    {
+        Thread::IRQwait();
+        FastInterruptEnableLock eLock(dLock);
+        Thread::yield();
+    }
 }

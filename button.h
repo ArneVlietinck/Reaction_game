@@ -1,21 +1,9 @@
-/*
- * File: button.h
- * Authors: Simon Mastrodicasa & Arne Vlietinck
- */
 
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include <miosix.h>
-using namespace miosix;
+void configureButtonInterrupt();
 
-typedef Gpio<GPIOA_BASE,0> button;
+void waitForButton();
 
-extern bool action;
-
-void initButton();
-void checkButton();
-void checkAction();
-
-
-#endif /* BUTTON_H */
+#endif //BUTTON_H
