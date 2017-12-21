@@ -1,13 +1,16 @@
 /*
- * File:   main.cpp
+ * File: main.cpp
  * Authors: Simon Mastrodicasa & Arne Vlietinck
  */
 
 #include <miosix.h>
+#include <pthread.h>
 #include "led.h"
 #include "game.h"
 #include "player.h"
 #include "Buzzer.h"
+#include "button.h"
+
 using namespace miosix;
 
 /*
@@ -27,17 +30,31 @@ bool action;
  * Increased difficulty means less time between on and off.
  */
 int difficulty;
+/*
+ *
+ */
+ pthread_mutex_t mutex=PTHREAD_MUTEX_INITIALIZER;
 
+/*
+ * Initialisation of the main:
+ *  Led initialisation
+ *  Button initialisation
+ */
+void mainInitialisation()
+{
+  initLeds();
+  configureButtonInterrupt();
+}
 
 int main()
 {
-    greenLed::mode(Mode::OUTPUT);
-    orangeLed::mode(Mode::OUTPUT);
-    redLed::mode(Mode::OUTPUT);
-    blueLed::mode(Mode::OUTPUT);
-
-    button::mode(Mode::INPUT);
-
+    mainInitialisation();
+    //while (game == 0)
+    //{
+      waitForButton(); //Start game by clicking the button
+      //gameOver();
+      //blinkingAll();
+    //}
     game=GAMEOVER;
     while(1)
     {
@@ -45,15 +62,13 @@ int main()
             //Initialisation
             difficulty = 1;
             interaction = false;
-            action = false;
+            {
+              pthread_mutex_lock(&mutex);
+              action = false;
+              pthread_mutex_unlock(&mutex);
+            }
             game = 0;
         }
-        if(button::value()==1)
-        {
-          blinkingAll();
-          ADPCMSound sound(Buzzer_bin,Buzzer_bin_len);
-          Player::instance().play(sound);
-        }
-        //thread->join();
+        blinkingAll();
     }
 }
