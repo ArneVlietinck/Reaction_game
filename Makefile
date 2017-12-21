@@ -21,7 +21,8 @@ main.cpp    \
 led.cpp \
 game.cpp \
 player.cpp \
-adpcm.c
+adpcm.c \
+button.cpp
 ##
 ## List here additional static libraries with relative path
 ##
