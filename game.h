@@ -6,7 +6,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include<miosix.h>
+#include <miosix.h>
 using namespace miosix;
 
 #define GAMEOVER 1

@@ -1,5 +1,5 @@
 /*
- * File:   led.h
+ * File: led.h
  * Authors: Simon Mastrodicasa & Arne Vlietinck
  */
 
