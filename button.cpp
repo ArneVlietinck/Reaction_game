@@ -2,19 +2,27 @@
 #include "button.h"
 #include <miosix.h>
 #include <miosix/kernel/scheduler/scheduler.h>
+#include <pthread.h>
 
 using namespace miosix;
+using namespace std;
 
 typedef Gpio<GPIOA_BASE,0> button;
 
+extern pthread_mutex_t mutex;
+extern bool action;
+
 static Thread *waiting=0;
-extern bool action; 
 
 void __attribute__((naked)) EXTI0_IRQHandler()
 {
     saveContext();
     asm volatile("bl _Z16EXTI0HandlerImplv");
-    action=true;
+    {
+      pthread_mutex_lock(&mutex);
+      action=true;
+      pthread_mutex_unlock(&mutex);
+    }
     restoreContext();
 }
 

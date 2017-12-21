@@ -3,7 +3,6 @@
 #define BUTTON_H
 
 void configureButtonInterrupt();
-
 void waitForButton();
 
 #endif //BUTTON_H

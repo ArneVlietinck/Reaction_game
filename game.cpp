@@ -3,10 +3,13 @@
  * Authors: Simon Mastrodicasa & Arne Vlietinck
  */
 
+#include <pthread.h>
 #include "game.h"
 #include "led.h"
 #include "player.h"
 #include "Buzzer.h"
+
+extern pthread_mutex_t mutex;
 
 /*
  * @return Returns a boolean which tells if the led should blink again.
@@ -30,6 +33,7 @@ bool shouldBlinkAgain()
  */
 int shouldRepeat(int currentLed)
 {
+    pthread_mutex_lock(&mutex);
     /* interaction == false to avoid the situation where an interaction was true from the shouldRepeat
      * of the previous iteration and shouldRepeat is again true, which would lead
      * to a third repetition
@@ -68,6 +72,8 @@ int shouldRepeat(int currentLed)
     {
       currentLed++;
     }
+
+    pthread_mutex_unlock(&mutex);
 
     if(currentLed > RED)
     {
