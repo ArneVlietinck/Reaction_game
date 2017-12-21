@@ -19,3 +19,12 @@ void checkButton()
 {
   while(button::value()==0) Thread::sleep(10);
 }
+
+/*
+ * Check if the button is pushed and chance the action to true.
+ */
+void checkAction()
+{
+  while(button::value()==0) Thread::sleep(10);
+  action = true;
+}
