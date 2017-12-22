@@ -13,6 +13,7 @@
 
 /**
  * Function which calculate if the led should blink for a second time.
+ *
  * @return Returns a random boolean which tells if the led should blink again.
  * @note The boolean is in 30% of the situations true and in the other 70% false.
  */
@@ -25,6 +26,7 @@ void buzzerSound();
 
 /**
  * Function which does the gameOver ritual.
+ *
  * @post The buzzersound is played.
  * @post The gameOver blinking ritual is played.
  * @see buzzerSound()
@@ -42,9 +44,10 @@ void gameOver();
  * @post If and only if (interaction==true && action==true), interaction is set false.
  * @post If and only if (interaction==true && action==true), action is set false.
  * @post If and only if (interaction==true && action==true), difficulty is incremented by one.
- * @post The currentled is incremented by one.
- * @post If and only if currentled is bigger then the biggest led (red),
- * it is reset to the first led (blue).
+ * @post If and only if (clockwise==true), currentLed is incremented by one.
+ * @post If and only if (clockwise!=false), currentLed is decremented by one.
+ * @post If currentLed is bigger than the biggest led (red), it is reset to the smallest led (blue).
+ * @post If currentLed is smaller than the smalles led (blue), it is reset to the biggest led (red).
  * @return int currentLed - The number of the current led.
  * @see gameOver()
  * @see shouldBlinkAgain();

@@ -44,6 +44,12 @@ bool action;
 int difficulty;
 
 /**
+ * Integer which representate the level of the game.
+ * There are several gameplays implemented depending on the game level.
+ */
+int level;
+
+/**
  * A pthread_mutex_t variable to prevent a race condition when changing action.
  */
  pthread_mutex_t mutex=PTHREAD_MUTEX_INITIALIZER;
@@ -77,6 +83,7 @@ void reInitialisation(){
     pthread_mutex_unlock(&mutex);
   }
   game = 0;
+  level = 0;
 }
 
 /*! \mainpage My Personal Index Page

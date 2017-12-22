@@ -20,6 +20,13 @@
 void initLeds();
 
 /**
+ * Function which calculate if the led should blink in clock or counterclockwise.
+ *
+ * @return Returns a random boolean which tells if the led should blink again.
+ */
+bool clockOrCounterClockWise();
+
+/**
  * Calculate the sleepTime between two blinks of a led.
  *
  * @param int difficulty - The current difficulty level of the game.
@@ -56,18 +63,18 @@ void blinkingCounterClockwise(int currentLed, int sleepTime);
  *
  * @param int currentLed - The number of the current led.
  * @param int sleepTime - The sleeptime between two blinking leds.
- * @param bool clockwise - Specifies if the blinking sequence is clockwise (true) or counterclockwise (false)
- * @post if and only if (clockwise == true), blinkingClockwise() is excecuted.
- * @post if and only if (clockwise != true), blinkingCounterClockwise() is excecuted.
- *
+ * @param int level - Specifies the level of the current game.
+ * @post if and only if (clockOrCounterClockWise() == true), blinkingClockwise() is excecuted.
+ * @post if and only if (clockOrCounterClockWise() != true), blinkingCounterClockwise() is excecuted.
+ * @see clockOrCounterClockWise()
  */
-void blinkingsequence(int currentLed, int sleepTime, bool clockwise);
+void blinkingsequence(int currentLed, int sleepTime, int level);
 
 /**
  * Function with the game ritual.
  *
  * @see calculateSleepTime(int difficulty)
- * @see blinkingsequence()
+ * @see blinkingsequence(int currentLed, int sleepTime, int level)
  */
 void blinkingGame();
 

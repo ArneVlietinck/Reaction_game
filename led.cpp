@@ -14,6 +14,7 @@ using namespace miosix;
 
 extern bool game;
 extern int difficulty;
+extern int level;
 
 typedef Gpio<GPIOD_BASE,12> greenLed;
 typedef Gpio<GPIOD_BASE,13> orangeLed;
@@ -26,6 +27,19 @@ void initLeds()
     orangeLed::mode(Mode::OUTPUT);
     redLed::mode(Mode::OUTPUT);
     blueLed::mode(Mode::OUTPUT);
+}
+
+bool clockOrCounterClockWise()
+{
+    int randomval = rand() % 2;
+    if(randomval == 0 )
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
 }
 
 int calculateSleepTime(int difficulty)
@@ -118,9 +132,9 @@ void blinkingCounterClockwise(int currentLed, int sleepTime)
   }
 }
 
-void blinkingsequence(int currentLed, int sleepTime, bool clockwise)
+void blinkingsequence(int currentLed, int sleepTime, int level)
 {
-  if(clockwise)
+  if(clockOrCounterClockWise())
   {
     blinkingClockwise(currentLed, sleepTime);
   }
@@ -134,8 +148,9 @@ void blinkingGame()
 {
     int currentLed = BLUE;
     int sleepTime = calculateSleepTime(difficulty);
+    level++;
 
-    blinkingsequence(currentLed, sleepTime, false);
+    blinkingsequence(currentLed, sleepTime, level);
 }
 
 void turnAllOn()
