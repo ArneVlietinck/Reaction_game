@@ -1,6 +1,9 @@
-/*
- * File: led.h
- * Authors: Simon Mastrodicasa & Arne Vlietinck
+/**
+ * \file led.h
+ * \author Simon Mastrodicasa
+ * \author Arne Vlietinck
+ * \version 1.0
+ * \date 22/12/2017
  */
 
 #ifndef LED_H
@@ -11,19 +14,42 @@
 #define ORANGE 3
 #define RED 4
 
-#include <miosix.h>
-using namespace miosix;
-
-typedef Gpio<GPIOD_BASE,12> greenLed;
-typedef Gpio<GPIOD_BASE,13> orangeLed;
-typedef Gpio<GPIOD_BASE,14> redLed;
-typedef Gpio<GPIOD_BASE,15> blueLed;
-
+/**
+ * Initialisation of the Green, Orange, Red and Blue led in output mode.
+ */
 void initLeds();
-void blinkingAll();
-void turnAllOn();
-void turnAllOff();
-void gameOver();
 
+/**
+ * Calculate the sleepTime between two blinks of a led.
+ * @param int difficulty - The current difficulty level of the game.
+ * @return int The sleepTime between two blinking leds.
+ */
+int calculateSleepTime(int difficulty);
+
+/**
+ * Function with the game ritual.
+ * @post Repeat the sequence:
+ *  Turn led x high, sleep for sleepTime, turn led x low, sleep for sleepTime,
+ *  sets currentLed to gamePlay(currentLed)
+ * @see gamePlay()
+ */
+void blinkingGame();
+
+/**
+ * Turn Red, Blue, Green and Orange leds on.
+ */
+void turnAllOn();
+
+/**
+ * Turn Red, Blue, Green and Orange leds off.
+ */
+void turnAllOff();
+
+/**
+ * Game over ritual by the blinking leds.
+ * @post Repeat three times the sequence:
+ *  Turn all leds on, sleep for 500ms, turn all leds off, sleep for 500ms.
+ */
+void gameOverBlinking();
 
 #endif /* LED_H */

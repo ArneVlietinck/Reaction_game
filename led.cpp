@@ -1,13 +1,25 @@
-/*
- * File: led.cpp
- * Authors: Simon Mastrodicasa & Arne Vlietinck
+/**
+ * \file led.cpp
+ * \author Simon Mastrodicasa
+ * \author Arne Vlietinck
+ * \version 1.0
+ * \date 22/12/2017
  */
+
+#include <miosix.h>
 #include "led.h"
 #include "game.h"
 
-/*
- * Initialisation of the Green, Orange, Red and Blue led in output mode.
- */
+using namespace miosix;
+
+extern bool game;
+extern int difficulty;
+
+typedef Gpio<GPIOD_BASE,12> greenLed;
+typedef Gpio<GPIOD_BASE,13> orangeLed;
+typedef Gpio<GPIOD_BASE,14> redLed;
+typedef Gpio<GPIOD_BASE,15> blueLed;
+
 void initLeds()
 {
     greenLed::mode(Mode::OUTPUT);
@@ -16,18 +28,22 @@ void initLeds()
     blueLed::mode(Mode::OUTPUT);
 }
 
-/*
- *
- */
-void blinkingAll()
+int calculateSleepTime(int difficulty)
+{
+  int sleepTime = 600 - 30 * difficulty;
+  if (sleepTime<0)
+  {
+    return 0;
+  }
+  else{
+    return sleepTime;
+  }
+}
+
+void blinkingGame()
 {
     int currentLed = BLUE;
-    //The further the game, the shorter the time between an on/off
-    int sleepTime = 600 - 30 * difficulty;
-    if (sleepTime<0)
-    {
-      sleepTime = 0;
-    }
+    int sleepTime = calculateSleepTime(difficulty);
 
     while(currentLed==BLUE && game!=GAMEOVER)
     {
@@ -35,7 +51,7 @@ void blinkingAll()
       Thread::sleep(sleepTime);
       blueLed::low();
       Thread::sleep(sleepTime);
-      currentLed = shouldRepeat(currentLed);
+      currentLed = gamePlay(currentLed);
     }
 
     while(currentLed==GREEN && game!=GAMEOVER)
@@ -44,7 +60,7 @@ void blinkingAll()
       Thread::sleep(sleepTime);
       greenLed::low();
       Thread::sleep(sleepTime);
-      currentLed = shouldRepeat(currentLed);
+      currentLed = gamePlay(currentLed);
     }
 
     while(currentLed==ORANGE && game!=GAMEOVER)
@@ -53,7 +69,7 @@ void blinkingAll()
       Thread::sleep(sleepTime);
       orangeLed::low();
       Thread::sleep(sleepTime);
-      currentLed = shouldRepeat(currentLed);
+      currentLed = gamePlay(currentLed);
     }
 
     while(currentLed==RED && game!=GAMEOVER)
@@ -62,13 +78,10 @@ void blinkingAll()
       Thread::sleep(sleepTime);
       redLed::low();
       Thread::sleep(sleepTime);
-      currentLed = shouldRepeat(currentLed);
+      currentLed = gamePlay(currentLed);
     }
 }
 
-/*
- * Turn Red, Blue, Green and Orange leds on.
- */
 void turnAllOn()
 {
     redLed::high();
@@ -77,9 +90,6 @@ void turnAllOn()
     orangeLed::high();
 }
 
-/*
- * Turn Red, Blue, Green and Orange leds off.
- */
 void turnAllOff()
 {
     redLed::low();
@@ -88,12 +98,7 @@ void turnAllOff()
     orangeLed::low();
 }
 
-/*
- * Game over ritual:
- *  Turn all leds on, sleep for 500ms, turn all leds of, sleep for 500ms.
- * Repeat this cycle 3 times.
- */
-void gameOver()
+void gameOverBlinking()
 {
     for(int i=0; i<=2; i++)
     {

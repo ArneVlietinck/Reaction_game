@@ -1,20 +1,28 @@
-/*
- * File: game.cpp
- * Authors: Simon Mastrodicasa & Arne Vlietinck
+/**
+ * \file game.cpp
+ * \author Simon Mastrodicasa
+ * \author Arne Vlietinck
+ * \version 1.0
+ * \date 22/12/2017
  */
 
+#include <miosix.h>
 #include <pthread.h>
 #include "game.h"
 #include "led.h"
 #include "player.h"
 #include "Buzzer.h"
 
+using namespace miosix;
+
+typedef Gpio<GPIOA_BASE,0> button;
+
+extern bool action;
+extern bool game;
+extern bool interaction;
+extern int difficulty;
 extern pthread_mutex_t mutex;
 
-/*
- * @return Returns a boolean which tells if the led should blink again.
- * @note The boolean is in 30% of the situations true and in the other 70% false.
- */
 bool shouldBlinkAgain()
 {
     int randomval = rand() % 10;
@@ -28,13 +36,23 @@ bool shouldBlinkAgain()
     }
 }
 
-/**
- *
- */
-int shouldRepeat(int currentLed)
+void buzzerSound()
+{
+    ADPCMSound sound(Buzzer_bin,Buzzer_bin_len);
+    Player::instance().play(sound);
+}
+
+void gameOver(){
+    buzzerSound();
+    gameOverBlinking();
+    game = GAMEOVER;
+}
+
+int gamePlay(int currentLed)
 {
     pthread_mutex_lock(&mutex);
-    /* interaction == false to avoid the situation where an interaction was true from the shouldRepeat
+    /**
+     * interaction == false to avoid the situation where an interaction was true from the shouldRepeat
      * of the previous iteration and shouldRepeat is again true, which would lead
      * to a third repetition
      */
@@ -45,18 +63,12 @@ int shouldRepeat(int currentLed)
     //Something should have been done but the player didn't do it
     else if(interaction==true && action==false)
     {
-        ADPCMSound sound(Buzzer_bin,Buzzer_bin_len);
-        Player::instance().play(sound);
         gameOver();
-        game = GAMEOVER;
     }
     //Nothing should have been done and the player did something
     else if(interaction==false && action==true)
     {
-        ADPCMSound sound(Buzzer_bin,Buzzer_bin_len);
-        Player::instance().play(sound);
         gameOver();
-        game = GAMEOVER;
     }
     //Something should have been done and the player did it
     else if(interaction==true && action==true)
@@ -75,7 +87,7 @@ int shouldRepeat(int currentLed)
 
     pthread_mutex_unlock(&mutex);
 
-    if(currentLed > RED)
+    if(currentLed>RED)
     {
         currentLed = BLUE;
     }

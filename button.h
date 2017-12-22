@@ -1,3 +1,11 @@
+/**
+ * \file button.h
+ * \author Federico Terraneo
+ * \author Simon Mastrodicasa
+ * \author Arne Vlietinck
+ * \version 1.0
+ * \date 22/12/2017
+ */
 
 #ifndef BUTTON_H
 #define BUTTON_H
