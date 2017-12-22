@@ -1,0 +1,53 @@
+\hypertarget{adpcm_8h}{}\section{adpcm.\+h File Reference}
+\label{adpcm_8h}\index{adpcm.\+h@{adpcm.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{adpcm_8h_a8a44d2281064f8c97ecb4ccbec0d82eb}{A\+D\+P\+C\+M\+\_\+\+Encode} (int32\+\_\+t sample)
+\begin{DoxyCompactList}\small\item\em A\+D\+P\+C\+M\+\_\+\+Encode. \end{DoxyCompactList}\item 
+int16\+\_\+t \hyperlink{adpcm_8h_a7f7d41c4684389b2f0df1146cd86f15f}{A\+D\+P\+C\+M\+\_\+\+Decode} (uint8\+\_\+t code)
+\begin{DoxyCompactList}\small\item\em A\+D\+P\+C\+M\+\_\+\+Decode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{adpcm_8h_a7f7d41c4684389b2f0df1146cd86f15f}\label{adpcm_8h_a7f7d41c4684389b2f0df1146cd86f15f}} 
+\index{adpcm.\+h@{adpcm.\+h}!A\+D\+P\+C\+M\+\_\+\+Decode@{A\+D\+P\+C\+M\+\_\+\+Decode}}
+\index{A\+D\+P\+C\+M\+\_\+\+Decode@{A\+D\+P\+C\+M\+\_\+\+Decode}!adpcm.\+h@{adpcm.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+P\+C\+M\+\_\+\+Decode()}{ADPCM\_Decode()}}
+{\footnotesize\ttfamily int16\+\_\+t A\+D\+P\+C\+M\+\_\+\+Decode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{code }\end{DoxyParamCaption})}
+
+
+
+A\+D\+P\+C\+M\+\_\+\+Decode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & a byte containing a 4-\/bit A\+D\+P\+CM sample. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em } & 16-\/bit A\+D\+P\+CM sample \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{adpcm_8h_a8a44d2281064f8c97ecb4ccbec0d82eb}\label{adpcm_8h_a8a44d2281064f8c97ecb4ccbec0d82eb}} 
+\index{adpcm.\+h@{adpcm.\+h}!A\+D\+P\+C\+M\+\_\+\+Encode@{A\+D\+P\+C\+M\+\_\+\+Encode}}
+\index{A\+D\+P\+C\+M\+\_\+\+Encode@{A\+D\+P\+C\+M\+\_\+\+Encode}!adpcm.\+h@{adpcm.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+P\+C\+M\+\_\+\+Encode()}{ADPCM\_Encode()}}
+{\footnotesize\ttfamily uint8\+\_\+t A\+D\+P\+C\+M\+\_\+\+Encode (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{sample }\end{DoxyParamCaption})}
+
+
+
+A\+D\+P\+C\+M\+\_\+\+Encode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & a 16-\/bit P\+CM sample \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em } & a 4-\/bit A\+D\+P\+CM sample \\
+\hline
+\end{DoxyRetVals}

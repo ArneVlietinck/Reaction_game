@@ -1,0 +1,87 @@
+\hypertarget{adpcm_8c}{}\section{adpcm.\+c File Reference}
+\label{adpcm_8c}\index{adpcm.\+c@{adpcm.\+c}}
+{\ttfamily \#include \char`\"{}adpcm.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{adpcm_8c_a8a44d2281064f8c97ecb4ccbec0d82eb}{A\+D\+P\+C\+M\+\_\+\+Encode} (int32\+\_\+t sample)
+\begin{DoxyCompactList}\small\item\em A\+D\+P\+C\+M\+\_\+\+Encode. \end{DoxyCompactList}\item 
+int16\+\_\+t \hyperlink{adpcm_8c_a7f7d41c4684389b2f0df1146cd86f15f}{A\+D\+P\+C\+M\+\_\+\+Decode} (uint8\+\_\+t code)
+\begin{DoxyCompactList}\small\item\em A\+D\+P\+C\+M\+\_\+\+Decode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint16\+\_\+t \hyperlink{adpcm_8c_ae6f79ed9ab7b5abf97a1263c0faf2695}{Step\+Size\+Table} \mbox{[}89\mbox{]}
+\item 
+const int8\+\_\+t \hyperlink{adpcm_8c_aa7c5c6f7c5f5e97d6e7a0add664258f9}{Index\+Table} \mbox{[}16\mbox{]} =\{0xff,0xff,0xff,0xff,2,4,6,8,0xff,0xff,0xff,0xff,2,4,6,8\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{adpcm_8c_a7f7d41c4684389b2f0df1146cd86f15f}\label{adpcm_8c_a7f7d41c4684389b2f0df1146cd86f15f}} 
+\index{adpcm.\+c@{adpcm.\+c}!A\+D\+P\+C\+M\+\_\+\+Decode@{A\+D\+P\+C\+M\+\_\+\+Decode}}
+\index{A\+D\+P\+C\+M\+\_\+\+Decode@{A\+D\+P\+C\+M\+\_\+\+Decode}!adpcm.\+c@{adpcm.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+P\+C\+M\+\_\+\+Decode()}{ADPCM\_Decode()}}
+{\footnotesize\ttfamily int16\+\_\+t A\+D\+P\+C\+M\+\_\+\+Decode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{code }\end{DoxyParamCaption})}
+
+
+
+A\+D\+P\+C\+M\+\_\+\+Decode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & a byte containing a 4-\/bit A\+D\+P\+CM sample. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em } & 16-\/bit A\+D\+P\+CM sample \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{adpcm_8c_a8a44d2281064f8c97ecb4ccbec0d82eb}\label{adpcm_8c_a8a44d2281064f8c97ecb4ccbec0d82eb}} 
+\index{adpcm.\+c@{adpcm.\+c}!A\+D\+P\+C\+M\+\_\+\+Encode@{A\+D\+P\+C\+M\+\_\+\+Encode}}
+\index{A\+D\+P\+C\+M\+\_\+\+Encode@{A\+D\+P\+C\+M\+\_\+\+Encode}!adpcm.\+c@{adpcm.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+P\+C\+M\+\_\+\+Encode()}{ADPCM\_Encode()}}
+{\footnotesize\ttfamily uint8\+\_\+t A\+D\+P\+C\+M\+\_\+\+Encode (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{sample }\end{DoxyParamCaption})}
+
+
+
+A\+D\+P\+C\+M\+\_\+\+Encode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & a 16-\/bit P\+CM sample \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em } & a 4-\/bit A\+D\+P\+CM sample \\
+\hline
+\end{DoxyRetVals}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{adpcm_8c_aa7c5c6f7c5f5e97d6e7a0add664258f9}\label{adpcm_8c_aa7c5c6f7c5f5e97d6e7a0add664258f9}} 
+\index{adpcm.\+c@{adpcm.\+c}!Index\+Table@{Index\+Table}}
+\index{Index\+Table@{Index\+Table}!adpcm.\+c@{adpcm.\+c}}
+\subsubsection{\texorpdfstring{Index\+Table}{IndexTable}}
+{\footnotesize\ttfamily const int8\+\_\+t Index\+Table\mbox{[}16\mbox{]} =\{0xff,0xff,0xff,0xff,2,4,6,8,0xff,0xff,0xff,0xff,2,4,6,8\}}
+
+\mbox{\Hypertarget{adpcm_8c_ae6f79ed9ab7b5abf97a1263c0faf2695}\label{adpcm_8c_ae6f79ed9ab7b5abf97a1263c0faf2695}} 
+\index{adpcm.\+c@{adpcm.\+c}!Step\+Size\+Table@{Step\+Size\+Table}}
+\index{Step\+Size\+Table@{Step\+Size\+Table}!adpcm.\+c@{adpcm.\+c}}
+\subsubsection{\texorpdfstring{Step\+Size\+Table}{StepSizeTable}}
+{\footnotesize\ttfamily const uint16\+\_\+t Step\+Size\+Table\mbox{[}89\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=\{7,8,9,10,11,12,13,14,16,17,
+                            19,21,23,25,28,31,34,37,41,45,
+                            50,55,60,66,73,80,88,97,107,118,
+                            130,143,157,173,190,209,230,253,279,307,
+                            337,371,408,449,494,544,598,658,724,796,
+                            876,963,1060,1166,1282,1411,1552,1707,1878,2066,
+                            2272,2499,2749,3024,3327,3660,4026,4428,4871,5358,
+                            5894,6484,7132,7845,8630,9493,10442,11487,12635,13899,
+                            15289,16818,18500,20350,22385,24623,27086,29794,32767\}
+\end{DoxyCode}

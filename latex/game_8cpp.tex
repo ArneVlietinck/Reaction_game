@@ -1,0 +1,167 @@
+\hypertarget{game_8cpp}{}\section{game.\+cpp File Reference}
+\label{game_8cpp}\index{game.\+cpp@{game.\+cpp}}
+{\ttfamily \#include $<$miosix.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}led.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Buzzer.\+h\char`\"{}}\newline
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+A\+\_\+\+B\+A\+SE, 0 $>$ \hyperlink{game_8cpp_a9ec797ca62beef0ccb5999641933998a}{button}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{game_8cpp_a23d7d9d0b3ee3f4671ee1ec05b432f02}{should\+Blink\+Again} ()
+\item 
+void \hyperlink{game_8cpp_aa412aad3ea28593f7751a097bde6cf36}{buzzer\+Sound} ()
+\item 
+void \hyperlink{game_8cpp_a026d019671eda0cfe729200fc24d23ba}{game\+Over} ()
+\item 
+int \hyperlink{game_8cpp_aa3f1258ae5fa1147cb52cd7374e846de}{game\+Play} (int current\+Led)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{game_8cpp_ade51b3b01e72b5d342ac2e940e62b993}{action}
+\item 
+bool \hyperlink{game_8cpp_ad8f6d257142678d59a37901ccaff0438}{game}
+\item 
+bool \hyperlink{game_8cpp_ae7f4e2b17cc634cbab911507df1b899a}{interaction}
+\item 
+int \hyperlink{game_8cpp_a016a5d341f375d13639c75bf5987fb23}{difficulty}
+\item 
+pthread\+\_\+mutex\+\_\+t \hyperlink{game_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Simon Mastrodicasa 
+
+Arne Vlietinck 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+22/12/2017 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{game_8cpp_a9ec797ca62beef0ccb5999641933998a}\label{game_8cpp_a9ec797ca62beef0ccb5999641933998a}} 
+\index{game.\+cpp@{game.\+cpp}!button@{button}}
+\index{button@{button}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{button}{button}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+A\+\_\+\+B\+A\+SE,0$>$ \hyperlink{button_8cpp_a9ec797ca62beef0ccb5999641933998a}{button}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{game_8cpp_aa412aad3ea28593f7751a097bde6cf36}\label{game_8cpp_aa412aad3ea28593f7751a097bde6cf36}} 
+\index{game.\+cpp@{game.\+cpp}!buzzer\+Sound@{buzzer\+Sound}}
+\index{buzzer\+Sound@{buzzer\+Sound}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{buzzer\+Sound()}{buzzerSound()}}
+{\footnotesize\ttfamily void buzzer\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function which plays the buzzer sound. \mbox{\Hypertarget{game_8cpp_a026d019671eda0cfe729200fc24d23ba}\label{game_8cpp_a026d019671eda0cfe729200fc24d23ba}} 
+\index{game.\+cpp@{game.\+cpp}!game\+Over@{game\+Over}}
+\index{game\+Over@{game\+Over}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Over()}{gameOver()}}
+{\footnotesize\ttfamily void game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function which does the game\+Over ritual. \begin{DoxyPostcond}{Postcondition}
+The buzzersound is played. 
+
+The game\+Over blinking ritual is played. 
+\end{DoxyPostcond}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{game_8h_aa412aad3ea28593f7751a097bde6cf36}{buzzer\+Sound()} 
+
+\hyperlink{led_8cpp_a26db556312ad51df071dcff1e7943182}{game\+Over\+Blinking()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{game_8cpp_aa3f1258ae5fa1147cb52cd7374e846de}\label{game_8cpp_aa3f1258ae5fa1147cb52cd7374e846de}} 
+\index{game.\+cpp@{game.\+cpp}!game\+Play@{game\+Play}}
+\index{game\+Play@{game\+Play}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Play()}{gamePlay()}}
+{\footnotesize\ttfamily int game\+Play (\begin{DoxyParamCaption}\item[{int}]{current\+Led }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & currentled -\/ The number of the current led. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+If and only if (interaction==false \&\& \hyperlink{game_8h_a23d7d9d0b3ee3f4671ee1ec05b432f02}{should\+Blink\+Again()}==true), interaction is set true. 
+
+If (interaction==true \&\& action==false), game\+Over ritual starts. 
+
+If (interaction==false \&\& action==true), game\+Over ritual starts. 
+
+If and only if (interaction==true \&\& action==true), interaction is set false. 
+
+If and only if (interaction==true \&\& action==true), action is set false. 
+
+If and only if (interaction==true \&\& action==true), difficulty is incremented by one. 
+
+The currentled is incremented by one. 
+
+If and only if currentled is bigger then the biggest led (red), it is reset to the first led (blue). 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+int current\+Led -\/ The number of the current led. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{game_8h_a026d019671eda0cfe729200fc24d23ba}{game\+Over()} 
+
+\hyperlink{game_8h_a23d7d9d0b3ee3f4671ee1ec05b432f02}{should\+Blink\+Again()}; 
+\end{DoxySeeAlso}
+interaction == false to avoid the situation where an interaction was true from the should\+Repeat of the previous iteration and should\+Repeat is again true, which would lead to a third repetition\mbox{\Hypertarget{game_8cpp_a23d7d9d0b3ee3f4671ee1ec05b432f02}\label{game_8cpp_a23d7d9d0b3ee3f4671ee1ec05b432f02}} 
+\index{game.\+cpp@{game.\+cpp}!should\+Blink\+Again@{should\+Blink\+Again}}
+\index{should\+Blink\+Again@{should\+Blink\+Again}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{should\+Blink\+Again()}{shouldBlinkAgain()}}
+{\footnotesize\ttfamily bool should\+Blink\+Again (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function which calculate if the led should blink for a second time. \begin{DoxyReturn}{Returns}
+Returns a random boolean which tells if the led should blink again. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The boolean is in 30\% of the situations true and in the other 70\% false. 
+\end{DoxyNote}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{game_8cpp_ade51b3b01e72b5d342ac2e940e62b993}\label{game_8cpp_ade51b3b01e72b5d342ac2e940e62b993}} 
+\index{game.\+cpp@{game.\+cpp}!action@{action}}
+\index{action@{action}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily bool action}
+
+Boolean which representate the action of a player. When action is true, the player did an action. When action is false, the player didn\textquotesingle{}t do an action. \mbox{\Hypertarget{game_8cpp_a016a5d341f375d13639c75bf5987fb23}\label{game_8cpp_a016a5d341f375d13639c75bf5987fb23}} 
+\index{game.\+cpp@{game.\+cpp}!difficulty@{difficulty}}
+\index{difficulty@{difficulty}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{difficulty}{difficulty}}
+{\footnotesize\ttfamily int difficulty}
+
+Integer which representate the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking leds. \mbox{\Hypertarget{game_8cpp_ad8f6d257142678d59a37901ccaff0438}\label{game_8cpp_ad8f6d257142678d59a37901ccaff0438}} 
+\index{game.\+cpp@{game.\+cpp}!game@{game}}
+\index{game@{game}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{game}{game}}
+{\footnotesize\ttfamily bool game}
+
+Boolean which representate the state of the game. If game==1, the current game is finished. Elseif game==0, the current game is still going. \mbox{\Hypertarget{game_8cpp_ae7f4e2b17cc634cbab911507df1b899a}\label{game_8cpp_ae7f4e2b17cc634cbab911507df1b899a}} 
+\index{game.\+cpp@{game.\+cpp}!interaction@{interaction}}
+\index{interaction@{interaction}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{interaction}{interaction}}
+{\footnotesize\ttfamily bool interaction}
+
+Boolean which representate the need of a players\textquotesingle{} interaction. When interaction is true, the player must do something (eg\+: press the user button) to avoid a game over. \mbox{\Hypertarget{game_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}\label{game_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}} 
+\index{game.\+cpp@{game.\+cpp}!mutex@{mutex}}
+\index{mutex@{mutex}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t mutex}
+
+A pthread\+\_\+mutex\+\_\+t variable to prevent a race condition when changing action. 

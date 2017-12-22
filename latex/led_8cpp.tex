@@ -1,0 +1,151 @@
+\hypertarget{led_8cpp}{}\section{led.\+cpp File Reference}
+\label{led_8cpp}\index{led.\+cpp@{led.\+cpp}}
+{\ttfamily \#include $<$miosix.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}led.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+D\+\_\+\+B\+A\+SE, 12 $>$ \hyperlink{led_8cpp_a6745b7d47554307c3074e20c768fdbf0}{green\+Led}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+D\+\_\+\+B\+A\+SE, 13 $>$ \hyperlink{led_8cpp_a6945ae649b3a1e66a8b305907ae3d5cc}{orange\+Led}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+D\+\_\+\+B\+A\+SE, 14 $>$ \hyperlink{led_8cpp_ac320b3569ef011b726ff654b895ac0da}{red\+Led}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+D\+\_\+\+B\+A\+SE, 15 $>$ \hyperlink{led_8cpp_abf9b2336e2a6311d03233684fbbfb4a0}{blue\+Led}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{led_8cpp_ad7bef4224d21ecc2b1c163529be7e406}{init\+Leds} ()
+\item 
+int \hyperlink{led_8cpp_a26142695353c128f29762dd3b6a3f54b}{calculate\+Sleep\+Time} (int \hyperlink{main_8cpp_a016a5d341f375d13639c75bf5987fb23}{difficulty})
+\item 
+void \hyperlink{led_8cpp_a6c6d18df77cca231909b6b527e686eff}{blinking\+Game} ()
+\item 
+void \hyperlink{led_8cpp_a39576974b484c2b69eeea478fc858e63}{turn\+All\+On} ()
+\item 
+void \hyperlink{led_8cpp_a84f6740c06243b975019d0b1b1a633d2}{turn\+All\+Off} ()
+\item 
+void \hyperlink{led_8cpp_a26db556312ad51df071dcff1e7943182}{game\+Over\+Blinking} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{led_8cpp_ad8f6d257142678d59a37901ccaff0438}{game}
+\item 
+int \hyperlink{led_8cpp_a016a5d341f375d13639c75bf5987fb23}{difficulty}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Simon Mastrodicasa 
+
+Arne Vlietinck 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+22/12/2017 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{led_8cpp_abf9b2336e2a6311d03233684fbbfb4a0}\label{led_8cpp_abf9b2336e2a6311d03233684fbbfb4a0}} 
+\index{led.\+cpp@{led.\+cpp}!blue\+Led@{blue\+Led}}
+\index{blue\+Led@{blue\+Led}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{blue\+Led}{blueLed}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+D\+\_\+\+B\+A\+SE,15$>$ \hyperlink{led_8cpp_abf9b2336e2a6311d03233684fbbfb4a0}{blue\+Led}}
+
+\mbox{\Hypertarget{led_8cpp_a6745b7d47554307c3074e20c768fdbf0}\label{led_8cpp_a6745b7d47554307c3074e20c768fdbf0}} 
+\index{led.\+cpp@{led.\+cpp}!green\+Led@{green\+Led}}
+\index{green\+Led@{green\+Led}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{green\+Led}{greenLed}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+D\+\_\+\+B\+A\+SE,12$>$ \hyperlink{led_8cpp_a6745b7d47554307c3074e20c768fdbf0}{green\+Led}}
+
+\mbox{\Hypertarget{led_8cpp_a6945ae649b3a1e66a8b305907ae3d5cc}\label{led_8cpp_a6945ae649b3a1e66a8b305907ae3d5cc}} 
+\index{led.\+cpp@{led.\+cpp}!orange\+Led@{orange\+Led}}
+\index{orange\+Led@{orange\+Led}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{orange\+Led}{orangeLed}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+D\+\_\+\+B\+A\+SE,13$>$ \hyperlink{led_8cpp_a6945ae649b3a1e66a8b305907ae3d5cc}{orange\+Led}}
+
+\mbox{\Hypertarget{led_8cpp_ac320b3569ef011b726ff654b895ac0da}\label{led_8cpp_ac320b3569ef011b726ff654b895ac0da}} 
+\index{led.\+cpp@{led.\+cpp}!red\+Led@{red\+Led}}
+\index{red\+Led@{red\+Led}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{red\+Led}{redLed}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+D\+\_\+\+B\+A\+SE,14$>$ \hyperlink{led_8cpp_ac320b3569ef011b726ff654b895ac0da}{red\+Led}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{led_8cpp_a6c6d18df77cca231909b6b527e686eff}\label{led_8cpp_a6c6d18df77cca231909b6b527e686eff}} 
+\index{led.\+cpp@{led.\+cpp}!blinking\+Game@{blinking\+Game}}
+\index{blinking\+Game@{blinking\+Game}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{blinking\+Game()}{blinkingGame()}}
+{\footnotesize\ttfamily void blinking\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function with the game ritual. \begin{DoxyPostcond}{Postcondition}
+Repeat the sequence\+: Turn led x high, sleep for sleep\+Time, turn led x low, sleep for sleep\+Time, sets current\+Led to game\+Play(current\+Led) 
+\end{DoxyPostcond}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{game_8cpp_aa3f1258ae5fa1147cb52cd7374e846de}{game\+Play()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{led_8cpp_a26142695353c128f29762dd3b6a3f54b}\label{led_8cpp_a26142695353c128f29762dd3b6a3f54b}} 
+\index{led.\+cpp@{led.\+cpp}!calculate\+Sleep\+Time@{calculate\+Sleep\+Time}}
+\index{calculate\+Sleep\+Time@{calculate\+Sleep\+Time}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{calculate\+Sleep\+Time()}{calculateSleepTime()}}
+{\footnotesize\ttfamily int calculate\+Sleep\+Time (\begin{DoxyParamCaption}\item[{int}]{difficulty }\end{DoxyParamCaption})}
+
+Calculate the sleep\+Time between two blinks of a led. 
+\begin{DoxyParams}{Parameters}
+{\em int} & difficulty -\/ The current difficulty level of the game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The sleep\+Time between two blinking leds. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{led_8cpp_a26db556312ad51df071dcff1e7943182}\label{led_8cpp_a26db556312ad51df071dcff1e7943182}} 
+\index{led.\+cpp@{led.\+cpp}!game\+Over\+Blinking@{game\+Over\+Blinking}}
+\index{game\+Over\+Blinking@{game\+Over\+Blinking}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Over\+Blinking()}{gameOverBlinking()}}
+{\footnotesize\ttfamily void game\+Over\+Blinking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Game over ritual by the blinking leds. \begin{DoxyPostcond}{Postcondition}
+Repeat three times the sequence\+: Turn all leds on, sleep for 500ms, turn all leds off, sleep for 500ms. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{led_8cpp_ad7bef4224d21ecc2b1c163529be7e406}\label{led_8cpp_ad7bef4224d21ecc2b1c163529be7e406}} 
+\index{led.\+cpp@{led.\+cpp}!init\+Leds@{init\+Leds}}
+\index{init\+Leds@{init\+Leds}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{init\+Leds()}{initLeds()}}
+{\footnotesize\ttfamily void init\+Leds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialisation of the Green, Orange, Red and Blue led in output mode. \mbox{\Hypertarget{led_8cpp_a84f6740c06243b975019d0b1b1a633d2}\label{led_8cpp_a84f6740c06243b975019d0b1b1a633d2}} 
+\index{led.\+cpp@{led.\+cpp}!turn\+All\+Off@{turn\+All\+Off}}
+\index{turn\+All\+Off@{turn\+All\+Off}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{turn\+All\+Off()}{turnAllOff()}}
+{\footnotesize\ttfamily void turn\+All\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Turn Red, Blue, Green and Orange leds off. \mbox{\Hypertarget{led_8cpp_a39576974b484c2b69eeea478fc858e63}\label{led_8cpp_a39576974b484c2b69eeea478fc858e63}} 
+\index{led.\+cpp@{led.\+cpp}!turn\+All\+On@{turn\+All\+On}}
+\index{turn\+All\+On@{turn\+All\+On}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{turn\+All\+On()}{turnAllOn()}}
+{\footnotesize\ttfamily void turn\+All\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Turn Red, Blue, Green and Orange leds on. 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{led_8cpp_a016a5d341f375d13639c75bf5987fb23}\label{led_8cpp_a016a5d341f375d13639c75bf5987fb23}} 
+\index{led.\+cpp@{led.\+cpp}!difficulty@{difficulty}}
+\index{difficulty@{difficulty}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{difficulty}{difficulty}}
+{\footnotesize\ttfamily int difficulty}
+
+Integer which representate the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking leds. \mbox{\Hypertarget{led_8cpp_ad8f6d257142678d59a37901ccaff0438}\label{led_8cpp_ad8f6d257142678d59a37901ccaff0438}} 
+\index{led.\+cpp@{led.\+cpp}!game@{game}}
+\index{game@{game}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{game}{game}}
+{\footnotesize\ttfamily bool game}
+
+Boolean which representate the state of the game. If game==1, the current game is finished. Elseif game==0, the current game is still going. 

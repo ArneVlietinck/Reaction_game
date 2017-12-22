@@ -1,0 +1,97 @@
+\hypertarget{button_8cpp}{}\section{button.\+cpp File Reference}
+\label{button_8cpp}\index{button.\+cpp@{button.\+cpp}}
+{\ttfamily \#include \char`\"{}button.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$miosix.\+h$>$}\newline
+{\ttfamily \#include $<$miosix/kernel/scheduler/scheduler.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+A\+\_\+\+B\+A\+SE, 0 $>$ \hyperlink{button_8cpp_a9ec797ca62beef0ccb5999641933998a}{button}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{button_8cpp_a39ff7bb2baa455c6e13bcdcbb47f5c18}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((naked)) E\+X\+T\+I0\+\_\+\+I\+R\+Q\+Handler()
+\item 
+void \hyperlink{button_8cpp_a1b55748823e6e8521cdf9eff311d2213}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((used)) E\+X\+T\+I0\+Handler\+Impl()
+\item 
+void \hyperlink{button_8cpp_af4bd66d08430d5410d40000c81ee8bac}{configure\+Button\+Interrupt} ()
+\item 
+void \hyperlink{button_8cpp_a906c879d4d5d9f61eb62e7c7d2845ffe}{wait\+For\+Button} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+pthread\+\_\+mutex\+\_\+t \hyperlink{button_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}
+\item 
+bool \hyperlink{button_8cpp_ade51b3b01e72b5d342ac2e940e62b993}{action}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Federico Terraneo 
+
+Simon Mastrodicasa 
+
+Arne Vlietinck 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+22/12/2017 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{button_8cpp_a9ec797ca62beef0ccb5999641933998a}\label{button_8cpp_a9ec797ca62beef0ccb5999641933998a}} 
+\index{button.\+cpp@{button.\+cpp}!button@{button}}
+\index{button@{button}!button.\+cpp@{button.\+cpp}}
+\subsubsection{\texorpdfstring{button}{button}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+A\+\_\+\+B\+A\+SE,0$>$ \hyperlink{button_8cpp_a9ec797ca62beef0ccb5999641933998a}{button}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{button_8cpp_a39ff7bb2baa455c6e13bcdcbb47f5c18}\label{button_8cpp_a39ff7bb2baa455c6e13bcdcbb47f5c18}} 
+\index{button.\+cpp@{button.\+cpp}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!button.\+cpp@{button.\+cpp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(naked)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{button_8cpp_a1b55748823e6e8521cdf9eff311d2213}\label{button_8cpp_a1b55748823e6e8521cdf9eff311d2213}} 
+\index{button.\+cpp@{button.\+cpp}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!button.\+cpp@{button.\+cpp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(used)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{button_8cpp_af4bd66d08430d5410d40000c81ee8bac}\label{button_8cpp_af4bd66d08430d5410d40000c81ee8bac}} 
+\index{button.\+cpp@{button.\+cpp}!configure\+Button\+Interrupt@{configure\+Button\+Interrupt}}
+\index{configure\+Button\+Interrupt@{configure\+Button\+Interrupt}!button.\+cpp@{button.\+cpp}}
+\subsubsection{\texorpdfstring{configure\+Button\+Interrupt()}{configureButtonInterrupt()}}
+{\footnotesize\ttfamily void configure\+Button\+Interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{button_8cpp_a906c879d4d5d9f61eb62e7c7d2845ffe}\label{button_8cpp_a906c879d4d5d9f61eb62e7c7d2845ffe}} 
+\index{button.\+cpp@{button.\+cpp}!wait\+For\+Button@{wait\+For\+Button}}
+\index{wait\+For\+Button@{wait\+For\+Button}!button.\+cpp@{button.\+cpp}}
+\subsubsection{\texorpdfstring{wait\+For\+Button()}{waitForButton()}}
+{\footnotesize\ttfamily void wait\+For\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{button_8cpp_ade51b3b01e72b5d342ac2e940e62b993}\label{button_8cpp_ade51b3b01e72b5d342ac2e940e62b993}} 
+\index{button.\+cpp@{button.\+cpp}!action@{action}}
+\index{action@{action}!button.\+cpp@{button.\+cpp}}
+\subsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily bool action}
+
+Boolean which representate the action of a player. When action is true, the player did an action. When action is false, the player didn\textquotesingle{}t do an action. \mbox{\Hypertarget{button_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}\label{button_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}} 
+\index{button.\+cpp@{button.\+cpp}!mutex@{mutex}}
+\index{mutex@{mutex}!button.\+cpp@{button.\+cpp}}
+\subsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t mutex}
+
+A pthread\+\_\+mutex\+\_\+t variable to prevent a race condition when changing action. 

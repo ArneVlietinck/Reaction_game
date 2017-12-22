@@ -1,0 +1,117 @@
+\hypertarget{player_8cpp}{}\section{player.\+cpp File Reference}
+\label{player_8cpp}\index{player.\+cpp@{player.\+cpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include \char`\"{}miosix/kernel/scheduler/scheduler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util/software\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}adpcm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+B\+\_\+\+B\+A\+SE, 6 $>$ \hyperlink{player_8cpp_a89dc2efca284e57044b29839e444d998}{scl}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+B\+\_\+\+B\+A\+SE, 9 $>$ \hyperlink{player_8cpp_ac589799ec5536bf5f809f1e3c831dc44}{sda}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+A\+\_\+\+B\+A\+SE, 4 $>$ \hyperlink{player_8cpp_acf1a80490cc811290a24cb192a07702e}{lrck}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+C\+\_\+\+B\+A\+SE, 7 $>$ \hyperlink{player_8cpp_acf464ccc5c2fd24131152d97a54ceb8c}{mclk}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+C\+\_\+\+B\+A\+SE, 10 $>$ \hyperlink{player_8cpp_a824091a61d18cc0a418c99d5bcbfacba}{sclk}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+C\+\_\+\+B\+A\+SE, 12 $>$ \hyperlink{player_8cpp_af2b5acd219478f6e678ffe30a0e3a97f}{sdin}
+\item 
+typedef Gpio$<$ G\+P\+I\+O\+D\+\_\+\+B\+A\+SE, 4 $>$ \hyperlink{player_8cpp_a450f69b24b5caed0263d473b49066534}{reset}
+\item 
+typedef Software\+I2C$<$ \hyperlink{player_8cpp_ac589799ec5536bf5f809f1e3c831dc44}{sda}, \hyperlink{player_8cpp_a89dc2efca284e57044b29839e444d998}{scl} $>$ \hyperlink{player_8cpp_a96a7a6a62654eeb6f86e9029b1233564}{i2c}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{player_8cpp_a083349786247ecb8d87575de8be1f783}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((naked)) D\+M\+A1\+\_\+\+Stream5\+\_\+\+I\+R\+Q\+Handler()
+\item 
+void \hyperlink{player_8cpp_a25525f6e75804a1515adfe1a217e4962}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((used)) I2\+Sdma\+Handler\+Impl()
+\item 
+void \hyperlink{player_8cpp_a58d0dbf81293280b67270ff1a54a8e3b}{cs43l22volume} (int db)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{player_8cpp_a96a7a6a62654eeb6f86e9029b1233564}\label{player_8cpp_a96a7a6a62654eeb6f86e9029b1233564}} 
+\index{player.\+cpp@{player.\+cpp}!i2c@{i2c}}
+\index{i2c@{i2c}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{i2c}{i2c}}
+{\footnotesize\ttfamily typedef Software\+I2C$<$\hyperlink{player_8cpp_ac589799ec5536bf5f809f1e3c831dc44}{sda},\hyperlink{player_8cpp_a89dc2efca284e57044b29839e444d998}{scl}$>$ \hyperlink{player_8cpp_a96a7a6a62654eeb6f86e9029b1233564}{i2c}}
+
+\mbox{\Hypertarget{player_8cpp_acf1a80490cc811290a24cb192a07702e}\label{player_8cpp_acf1a80490cc811290a24cb192a07702e}} 
+\index{player.\+cpp@{player.\+cpp}!lrck@{lrck}}
+\index{lrck@{lrck}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{lrck}{lrck}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+A\+\_\+\+B\+A\+SE,4$>$ \hyperlink{player_8cpp_acf1a80490cc811290a24cb192a07702e}{lrck}}
+
+\mbox{\Hypertarget{player_8cpp_acf464ccc5c2fd24131152d97a54ceb8c}\label{player_8cpp_acf464ccc5c2fd24131152d97a54ceb8c}} 
+\index{player.\+cpp@{player.\+cpp}!mclk@{mclk}}
+\index{mclk@{mclk}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{mclk}{mclk}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+C\+\_\+\+B\+A\+SE,7$>$ \hyperlink{player_8cpp_acf464ccc5c2fd24131152d97a54ceb8c}{mclk}}
+
+\mbox{\Hypertarget{player_8cpp_a450f69b24b5caed0263d473b49066534}\label{player_8cpp_a450f69b24b5caed0263d473b49066534}} 
+\index{player.\+cpp@{player.\+cpp}!reset@{reset}}
+\index{reset@{reset}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{reset}{reset}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+D\+\_\+\+B\+A\+SE,4$>$ \hyperlink{player_8cpp_a450f69b24b5caed0263d473b49066534}{reset}}
+
+\mbox{\Hypertarget{player_8cpp_a89dc2efca284e57044b29839e444d998}\label{player_8cpp_a89dc2efca284e57044b29839e444d998}} 
+\index{player.\+cpp@{player.\+cpp}!scl@{scl}}
+\index{scl@{scl}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{scl}{scl}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+B\+\_\+\+B\+A\+SE,6$>$ \hyperlink{player_8cpp_a89dc2efca284e57044b29839e444d998}{scl}}
+
+\mbox{\Hypertarget{player_8cpp_a824091a61d18cc0a418c99d5bcbfacba}\label{player_8cpp_a824091a61d18cc0a418c99d5bcbfacba}} 
+\index{player.\+cpp@{player.\+cpp}!sclk@{sclk}}
+\index{sclk@{sclk}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{sclk}{sclk}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+C\+\_\+\+B\+A\+SE,10$>$ \hyperlink{player_8cpp_a824091a61d18cc0a418c99d5bcbfacba}{sclk}}
+
+\mbox{\Hypertarget{player_8cpp_ac589799ec5536bf5f809f1e3c831dc44}\label{player_8cpp_ac589799ec5536bf5f809f1e3c831dc44}} 
+\index{player.\+cpp@{player.\+cpp}!sda@{sda}}
+\index{sda@{sda}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{sda}{sda}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+B\+\_\+\+B\+A\+SE,9$>$ \hyperlink{player_8cpp_ac589799ec5536bf5f809f1e3c831dc44}{sda}}
+
+\mbox{\Hypertarget{player_8cpp_af2b5acd219478f6e678ffe30a0e3a97f}\label{player_8cpp_af2b5acd219478f6e678ffe30a0e3a97f}} 
+\index{player.\+cpp@{player.\+cpp}!sdin@{sdin}}
+\index{sdin@{sdin}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{sdin}{sdin}}
+{\footnotesize\ttfamily typedef Gpio$<$G\+P\+I\+O\+C\+\_\+\+B\+A\+SE,12$>$ \hyperlink{player_8cpp_af2b5acd219478f6e678ffe30a0e3a97f}{sdin}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{player_8cpp_a083349786247ecb8d87575de8be1f783}\label{player_8cpp_a083349786247ecb8d87575de8be1f783}} 
+\index{player.\+cpp@{player.\+cpp}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(naked)}]{ }\end{DoxyParamCaption})}
+
+D\+MA end of transfer interrupt \mbox{\Hypertarget{player_8cpp_a25525f6e75804a1515adfe1a217e4962}\label{player_8cpp_a25525f6e75804a1515adfe1a217e4962}} 
+\index{player.\+cpp@{player.\+cpp}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(used)}]{ }\end{DoxyParamCaption})}
+
+D\+MA end of transfer interrupt actual implementation \mbox{\Hypertarget{player_8cpp_a58d0dbf81293280b67270ff1a54a8e3b}\label{player_8cpp_a58d0dbf81293280b67270ff1a54a8e3b}} 
+\index{player.\+cpp@{player.\+cpp}!cs43l22volume@{cs43l22volume}}
+\index{cs43l22volume@{cs43l22volume}!player.\+cpp@{player.\+cpp}}
+\subsubsection{\texorpdfstring{cs43l22volume()}{cs43l22volume()}}
+{\footnotesize\ttfamily void cs43l22volume (\begin{DoxyParamCaption}\item[{int}]{db }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & volume level in db (0 to -\/102). Warning\+: 0db volume is L\+O\+U\+D! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value to store in register 0x20 and 0x21 
+\end{DoxyReturn}
