@@ -42,9 +42,10 @@ void buzzerSound()
     Player::instance().play(sound);
 }
 
-void gameOver(){
+void gameOver()
+{
     buzzerSound();
-    gameOverBlinking();
+    onOffBlinking(2);
     game = GAMEOVER;
 }
 

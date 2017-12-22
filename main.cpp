@@ -107,6 +107,7 @@ int main()
     {
         if(game==GAMEOVER) {
             reInitialisation();
+            onOffBlinking(1); /// To emphasize the start of the game.
         }
         blinkingGame();
     }

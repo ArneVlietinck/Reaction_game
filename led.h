@@ -89,11 +89,12 @@ void turnAllOn();
 void turnAllOff();
 
 /**
- * Game over ritual by the blinking leds.
+ * On off blinking ritual by leds.
  *
- * @post Repeat three times the sequence:
+ * @param int times - number of times
+ * @post Repeat - times - the sequence:
  *  Turn all leds on, sleep for 500ms, turn all leds off, sleep for 500ms.
  */
-void gameOverBlinking();
+void onOffBlinking(int times);
 
 #endif /* LED_H */

@@ -169,9 +169,9 @@ void turnAllOff()
     orangeLed::low();
 }
 
-void gameOverBlinking()
+void onOffBlinking(int times)
 {
-    for(int i=0; i<=2; i++)
+    for(int i=0; i<times; i++)
     {
         turnAllOn();
         Thread::sleep(500);

@@ -30,7 +30,7 @@ void buzzerSound();
  * @post The buzzersound is played.
  * @post The gameOver blinking ritual is played.
  * @see buzzerSound()
- * @see gameOverBlinking()
+ * @see onOffBlinking()
  */
 void gameOver();
 
