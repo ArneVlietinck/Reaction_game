@@ -48,7 +48,7 @@ void gameOver(){
     game = GAMEOVER;
 }
 
-int gamePlay(int currentLed)
+int gamePlay(int currentLed, bool clockwise)
 {
     pthread_mutex_lock(&mutex);
     /**
@@ -76,13 +76,27 @@ int gamePlay(int currentLed)
         //Back to normal
         interaction = false;
         action = false;
-        currentLed++;
+        if(clockwise)
+        {
+          currentLed++;
+        }
+        else
+        {
+          currentLed--;
+        }
         //game becomes more challenging
         difficulty++;
     }
     else
     {
-      currentLed++;
+      if(clockwise)
+      {
+        currentLed++;
+      }
+      else
+      {
+        currentLed--;
+      }
     }
 
     pthread_mutex_unlock(&mutex);
@@ -90,6 +104,11 @@ int gamePlay(int currentLed)
     if(currentLed>RED)
     {
         currentLed = BLUE;
+    }
+
+    if(currentLed<BLUE)
+    {
+        currentLed = RED;
     }
 
     return currentLed;

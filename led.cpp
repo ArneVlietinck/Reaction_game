@@ -40,46 +40,102 @@ int calculateSleepTime(int difficulty)
   }
 }
 
+void blinkingClockwise(int currentLed, int sleepTime)
+{
+  while(currentLed==BLUE && game!=GAMEOVER)
+  {
+    blueLed::high();
+    Thread::sleep(sleepTime);
+    blueLed::low();
+    Thread::sleep(sleepTime);
+    currentLed = gamePlay(currentLed, true);
+  }
+
+  while(currentLed==GREEN && game!=GAMEOVER)
+  {
+    greenLed::high();
+    Thread::sleep(sleepTime);
+    greenLed::low();
+    Thread::sleep(sleepTime);
+    currentLed = gamePlay(currentLed, true);
+  }
+
+  while(currentLed==ORANGE && game!=GAMEOVER)
+  {
+    orangeLed::high();
+    Thread::sleep(sleepTime);
+    orangeLed::low();
+    Thread::sleep(sleepTime);
+    currentLed = gamePlay(currentLed, true);
+  }
+
+  while(currentLed==RED && game!=GAMEOVER)
+  {
+    redLed::high();
+    Thread::sleep(sleepTime);
+    redLed::low();
+    Thread::sleep(sleepTime);
+    currentLed = gamePlay(currentLed, true);
+  }
+}
+
+void blinkingCounterClockwise(int currentLed, int sleepTime)
+{
+  while(currentLed==BLUE && game!=GAMEOVER)
+  {
+    blueLed::high();
+    Thread::sleep(sleepTime);
+    blueLed::low();
+    Thread::sleep(sleepTime);
+    currentLed = gamePlay(currentLed, false);
+  }
+
+  while(currentLed==RED && game!=GAMEOVER)
+  {
+    redLed::high();
+    Thread::sleep(sleepTime);
+    redLed::low();
+    Thread::sleep(sleepTime);
+    currentLed = gamePlay(currentLed, false);
+  }
+
+  while(currentLed==ORANGE && game!=GAMEOVER)
+  {
+    orangeLed::high();
+    Thread::sleep(sleepTime);
+    orangeLed::low();
+    Thread::sleep(sleepTime);
+    currentLed = gamePlay(currentLed, false);
+  }
+
+  while(currentLed==GREEN && game!=GAMEOVER)
+  {
+    greenLed::high();
+    Thread::sleep(sleepTime);
+    greenLed::low();
+    Thread::sleep(sleepTime);
+    currentLed = gamePlay(currentLed, false);
+  }
+}
+
+void blinkingsequence(int currentLed, int sleepTime, bool clockwise)
+{
+  if(clockwise)
+  {
+    blinkingClockwise(currentLed, sleepTime);
+  }
+  else
+  {
+    blinkingCounterClockwise(currentLed, sleepTime);
+  }
+}
+
 void blinkingGame()
 {
     int currentLed = BLUE;
     int sleepTime = calculateSleepTime(difficulty);
 
-    while(currentLed==BLUE && game!=GAMEOVER)
-    {
-      blueLed::high();
-      Thread::sleep(sleepTime);
-      blueLed::low();
-      Thread::sleep(sleepTime);
-      currentLed = gamePlay(currentLed);
-    }
-
-    while(currentLed==GREEN && game!=GAMEOVER)
-    {
-      greenLed::high();
-      Thread::sleep(sleepTime);
-      greenLed::low();
-      Thread::sleep(sleepTime);
-      currentLed = gamePlay(currentLed);
-    }
-
-    while(currentLed==ORANGE && game!=GAMEOVER)
-    {
-      orangeLed::high();
-      Thread::sleep(sleepTime);
-      orangeLed::low();
-      Thread::sleep(sleepTime);
-      currentLed = gamePlay(currentLed);
-    }
-
-    while(currentLed==RED && game!=GAMEOVER)
-    {
-      redLed::high();
-      Thread::sleep(sleepTime);
-      redLed::low();
-      Thread::sleep(sleepTime);
-      currentLed = gamePlay(currentLed);
-    }
+    blinkingsequence(currentLed, sleepTime, false);
 }
 
 void turnAllOn()

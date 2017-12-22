@@ -35,6 +35,7 @@ void gameOver();
 /**
  *
  * @param int currentled - The number of the current led.
+ * @param bool clockwise - Represents the order of blinking the leds.
  * @post If and only if (interaction==false && shouldBlinkAgain()==true), interaction is set true.
  * @post If (interaction==true && action==false), gameOver ritual starts.
  * @post If (interaction==false && action==true), gameOver ritual starts.
@@ -48,6 +49,6 @@ void gameOver();
  * @see gameOver()
  * @see shouldBlinkAgain();
  */
-int gamePlay(int currentLed);
+int gamePlay(int currentLed, bool clockwise);
 
 #endif /* GAME_H */
