@@ -35,14 +35,24 @@ bool clockOrCounterClockWise();
 int calculateSleepTime(int difficulty);
 
 /**
- * Function for the clockwise blinking.
+ * Function which blinks the currentLed (BLUE, GREEN, ORANGE, RED).
  *
  * @param int currentLed - The number of the current led.
  * @param int sleepTime - The sleeptime between two blinking leds.
  * @post Repeat the sequence:
- *  Turn led x high, sleep for sleepTime, turn led x low, sleep for sleepTime.
+ *  Turn currentLed high, sleep for sleepTime, turn currentLed low, sleep for sleepTime.
+ */
+void blinkLed(int currentLed, int sleepTime);
+
+/**
+ * Function for the clockwise blinking.
+ *
+ * @param int currentLed - The number of the current led.
+ * @param int sleepTime - The sleeptime between two blinking leds.
+ * @post blinkLed(currentLed, sleepTime)
  * @post Sets currentLed to gamePlay(currentLed)
  * @see gamePlay()
+ * @see blinkLed()
  */
 void blinkingClockwise(int currentLed, int sleepTime);
 
@@ -51,10 +61,10 @@ void blinkingClockwise(int currentLed, int sleepTime);
  *
  * @param int currentLed - The number of the current led.
  * @param int sleepTime - The sleeptime between two blinking leds.
- * @post Repeat the sequence:
- *  Turn led x high, sleep for sleepTime, turn led x low, sleep for sleepTime.
+ * @post blinkLed(currentLed, sleepTime)
  * @post Sets currentLed to gamePlay(currentLed)
  * @see gamePlay()
+ * @see blinkLed()
  */
 void blinkingCounterClockwise(int currentLed, int sleepTime);
 
@@ -64,8 +74,10 @@ void blinkingCounterClockwise(int currentLed, int sleepTime);
  * @param int currentLed - The number of the current led.
  * @param int sleepTime - The sleeptime between two blinking leds.
  * @param int level - Specifies the level of the current game.
- * @post if and only if (clockOrCounterClockWise() == true), blinkingClockwise() is excecuted.
- * @post if and only if (clockOrCounterClockWise() != true), blinkingCounterClockwise() is excecuted.
+ * @post if and only if (clockOrCounterClockWise() == true),
+ *blinkingClockwise() is excecuted.
+ * @post if and only if (clockOrCounterClockWise() != true),
+ *blinkingCounterClockwise() is excecuted.
  * @see clockOrCounterClockWise()
  */
 void blinkingsequence(int currentLed, int sleepTime, int level);
