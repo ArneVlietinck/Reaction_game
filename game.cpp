@@ -11,7 +11,7 @@
 #include "game.h"
 #include "led.h"
 #include "player.h"
-#include "Buzzer.h"
+#include "buzzer.h"
 
 using namespace miosix;
 
@@ -38,7 +38,7 @@ bool shouldBlinkAgain()
 
 void buzzerSound()
 {
-    ADPCMSound sound(Buzzer_bin,Buzzer_bin_len);
+    ADPCMSound sound(buzzer_bin,buzzer_bin_len);
     Player::instance().play(sound);
 }
 
@@ -52,29 +52,29 @@ void gameOver()
 int gamePlay(int currentLed, bool clockwise)
 {
     pthread_mutex_lock(&mutex);
-    /**
-     * interaction == false to avoid the situation where an interaction was true from the shouldRepeat
-     * of the previous iteration and shouldRepeat is again true, which would lead
-     * to a third repetition
+    /*
+     * (interaction==false) to avoid the situation where an interaction
+     *was true from the shouldRepeat of the previous iteration and
+     *shouldRepeat is again true, which would lead to a third repetition.
      */
     if(interaction==false && shouldBlinkAgain()==true)
     {
         interaction = true;
     }
-    //Something should have been done but the player didn't do it
+    //Something should have been done but the player didn't do it.
     else if(interaction==true && action==false)
     {
         gameOver();
     }
-    //Nothing should have been done and the player did something
+    //Nothing should have been done and the player did something.
     else if(interaction==false && action==true)
     {
         gameOver();
     }
-    //Something should have been done and the player did it
+    //Something should have been done and the player did it.
     else if(interaction==true && action==true)
     {
-        //Back to normal
+        //Back to normal.
         interaction = false;
         action = false;
         if(clockwise)
@@ -85,7 +85,7 @@ int gamePlay(int currentLed, bool clockwise)
         {
           currentLed--;
         }
-        //game becomes more challenging
+        //Game becomes more challenging.
         difficulty++;
     }
     else
@@ -102,11 +102,13 @@ int gamePlay(int currentLed, bool clockwise)
 
     pthread_mutex_unlock(&mutex);
 
+    //Handle issue when currentLed>4.
     if(currentLed>RED)
     {
         currentLed = BLUE;
     }
 
+    //Handle issue when currentLed<1.
     if(currentLed<BLUE)
     {
         currentLed = RED;

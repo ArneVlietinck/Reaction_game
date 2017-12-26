@@ -46,8 +46,8 @@ void gameOver();
  * @post If and only if (interaction==true && action==true), difficulty is incremented by one.
  * @post If and only if (clockwise==true), currentLed is incremented by one.
  * @post If and only if (clockwise!=false), currentLed is decremented by one.
- * @post If currentLed is bigger than the biggest led (red), it is reset to the smallest led (blue).
- * @post If currentLed is smaller than the smalles led (blue), it is reset to the biggest led (red).
+ * @post If and only if (currentLed>RED), it is reset to the smallest led (BLUE).
+ * @post If and only if (currentLed<BLUE), it is reset to the biggest led (RED).
  * @return int currentLed - The number of the current led.
  * @see gameOver()
  * @see shouldBlinkAgain();

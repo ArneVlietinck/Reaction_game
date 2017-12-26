@@ -57,6 +57,7 @@ int level;
 
 /**
  * Initialisation process of the main.
+ *
  * @post The leds are initialised.
  * @post The button is initialised.
  */
@@ -69,6 +70,7 @@ void mainInitialisation()
 /**
  * Reinitialisation process of the main. This is used to reset the game without
  * a complete reset by using the computer.
+ *
  * @post difficulty is set on 1.
  * @post Interaction is set on false.
  * @post Action is set on false while protected by mutex.
@@ -86,17 +88,27 @@ void reInitialisation(){
   level = 0;
 }
 
-/*! \mainpage My Personal Index Page
+/*! \mainpage Blinking Reaction Game
  *
- * \section intro_sec Introduction
+ * \section Introduction
  *
- * This is the introduction.
+ * This game is made for the discoveryboard STM32F407G.
+ * It is a project for Embedded Systems 1 and Advanced Operating Systems
+ *of prof. William Fornaciari at the Politecnico di Milano.
  *
- * \section install_sec Installation
+ * \section Gameplay
  *
- * \subsection step1 Step 1: Opening the box
- *
- * etc...
+ * The game starts when the player pushes on the button. To emphasize that the
+ *game starts, the four leds will blink once. From then on each button push can
+ *cause gameover. The blinking ritual will start with the blue led and goes
+ *random clockwise or counterclockwise. The main issue of the game is pushing
+ *the button when the led (blue/green/orange/red) blinks twice. If the player
+ *pushes the button correctly the time between the blinks will be shorter and
+ *consequentely the game will become more difficult.
+ * If the player pushes the button to late or in a wrong situation
+ *then the board will play a buzzer sound. After the buzzer sound,
+ *the game will start over again with blinking the leds 3 times.
+ * Good Luck!
  */
 int main()
 {
