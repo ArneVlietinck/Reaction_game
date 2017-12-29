@@ -64,12 +64,16 @@ int gamePlay(int currentLed, bool clockwise)
     //Something should have been done but the player didn't do it.
     else if(interaction==true && action==false)
     {
+        pthread_mutex_unlock(&mutex);
         gameOver();
+        pthread_mutex_lock(&mutex);
     }
     //Nothing should have been done and the player did something.
     else if(interaction==false && action==true)
     {
+        pthread_mutex_unlock(&mutex);
         gameOver();
+        pthread_mutex_lock(&mutex);
     }
     //Something should have been done and the player did it.
     else if(interaction==true && action==true)
