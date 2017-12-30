@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['buzzer_5fbin',['Buzzer_bin',['../_buzzer_8h.html#a5171e59d84961246309321accb46f290',1,'Buzzer.h']]],
-  ['buzzer_5fbin_5flen',['Buzzer_bin_len',['../_buzzer_8h.html#a733438592e8353b59c4c99ab52f9587f',1,'Buzzer.h']]]
+  ['buzzer_5fbin',['buzzer_bin',['../buzzer_8h.html#a16fb99d8f19208fcdc658ed59f10ae1b',1,'buzzer.h']]],
+  ['buzzer_5fbin_5flen',['buzzer_bin_len',['../buzzer_8h.html#a9758d94719afe6199272d1c89870a1c4',1,'buzzer.h']]]
 ];

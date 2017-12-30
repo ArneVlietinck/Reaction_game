@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Reaction_game
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
-   <div id="projectbrief">A reaction game for the course Embedded systems and Advanced operating systems at Politecnico di Milano.</div>
+   <div id="projectbrief">A reaction game for Embedded Systems 1 and Advanced Operation Systems at Politecnico di Milano.</div>
   </td>
  </tr>
  </tbody>
@@ -67,6 +68,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The h-file of the gameplay library.  
+<a href="#details">More...</a></p>
+
 <p><a href="game_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -80,13 +84,16 @@ Functions</h2></td></tr>
 <tr class="separator:a23d7d9d0b3ee3f4671ee1ec05b432f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa412aad3ea28593f7751a097bde6cf36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#aa412aad3ea28593f7751a097bde6cf36">buzzerSound</a> ()</td></tr>
 <tr class="separator:aa412aad3ea28593f7751a097bde6cf36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae626226c5eda23b723d67a2239b1dcf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ae626226c5eda23b723d67a2239b1dcf8">highscoreSound</a> ()</td></tr>
+<tr class="separator:ae626226c5eda23b723d67a2239b1dcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a026d019671eda0cfe729200fc24d23ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a026d019671eda0cfe729200fc24d23ba">gameOver</a> ()</td></tr>
 <tr class="separator:a026d019671eda0cfe729200fc24d23ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3f1258ae5fa1147cb52cd7374e846de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#aa3f1258ae5fa1147cb52cd7374e846de">gamePlay</a> (int currentLed)</td></tr>
-<tr class="separator:aa3f1258ae5fa1147cb52cd7374e846de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1607b7bd233c802d5d776c20b61ba9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#aa1607b7bd233c802d5d776c20b61ba9c">gamePlay</a> (int currentLed, bool clockwise)</td></tr>
+<tr class="separator:aa1607b7bd233c802d5d776c20b61ba9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Simon Mastrodicasa </dd>
+<div class="textblock"><p>The h-file of the gameplay library. </p>
+<dl class="section author"><dt>Author</dt><dd>Simon Mastrodicasa </dd>
 <dd>
 Arne Vlietinck </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
@@ -139,17 +146,26 @@ Arne Vlietinck </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function which does the gameOver ritual. </p><dl class="section post"><dt>Postcondition</dt><dd>The buzzersound is played. </dd>
+<p>Function which does the gameOver ritual.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>If and only if (level&gt;highscore), the highscore sound is played. </dd>
 <dd>
-The gameOver blinking ritual is played. </dd></dl>
+If and only if (level&gt;highscore), highscore is set to level. </dd>
+<dd>
+If (level&lt;=highscore), the buzzer sound is played. </dd>
+<dd>
+The gameOver blinking ritual is played. </dd>
+<dd>
+Game is set to GAMEOVER. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="game_8h.html#aa412aad3ea28593f7751a097bde6cf36">buzzerSound()</a> </dd>
 <dd>
-<a class="el" href="led_8cpp.html#a26db556312ad51df071dcff1e7943182">gameOverBlinking()</a> </dd></dl>
+<a class="el" href="game_8h.html#ae626226c5eda23b723d67a2239b1dcf8">highscoreSound()</a> </dd>
+<dd>
+<a class="el" href="led_8cpp.html#a31f84df1fa36897540314bb58287137a">onOffBlinking()</a> </dd></dl>
 
 </div>
 </div>
-<a id="aa3f1258ae5fa1147cb52cd7374e846de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3f1258ae5fa1147cb52cd7374e846de">&#9670;&nbsp;</a></span>gamePlay()</h2>
+<a id="aa1607b7bd233c802d5d776c20b61ba9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1607b7bd233c802d5d776c20b61ba9c">&#9670;&nbsp;</a></span>gamePlay()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,22 +174,34 @@ The gameOver blinking ritual is played. </dd></dl>
           <td class="memname">int gamePlay </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>currentLed</em></td><td>)</td>
+          <td class="paramname"><em>currentLed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>clockwise</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function which takes care of the gameplay. It checks the several possible conditions and increment or decrement the several game parameters. When the player did a wrong interaction the gameover ritual is started.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>currentled - The number of the current led. </td></tr>
+    <tr><td class="paramname">int</td><td>currentled - The number of the current LED. </td></tr>
+    <tr><td class="paramname">bool</td><td>clockwise - Represents the order of blinking the LED's. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section post"><dt>Postcondition</dt><dd>If and only if (interaction==false &amp;&amp; <a class="el" href="game_8h.html#a23d7d9d0b3ee3f4671ee1ec05b432f02">shouldBlinkAgain()</a>==true), interaction is set true. </dd>
 <dd>
-If (interaction==true &amp;&amp; action==false), gameOver ritual starts. </dd>
+If (interaction==true &amp;&amp; action==false), <a class="el" href="game_8h.html#a026d019671eda0cfe729200fc24d23ba">gameOver()</a> is excecuted. </dd>
 <dd>
-If (interaction==false &amp;&amp; action==true), gameOver ritual starts. </dd>
+If (interaction==false &amp;&amp; action==true), <a class="el" href="game_8h.html#a026d019671eda0cfe729200fc24d23ba">gameOver()</a> is excecuted. </dd>
 <dd>
 If and only if (interaction==true &amp;&amp; action==true), interaction is set false. </dd>
 <dd>
@@ -181,14 +209,37 @@ If and only if (interaction==true &amp;&amp; action==true), action is set false.
 <dd>
 If and only if (interaction==true &amp;&amp; action==true), difficulty is incremented by one. </dd>
 <dd>
-The currentled is incremented by one. </dd>
+If and only if (interaction==true &amp;&amp; action==true), level is incremented by one. </dd>
 <dd>
-If and only if currentled is bigger then the biggest led (red), it is reset to the first led (blue). </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>int currentLed - The number of the current led. </dd></dl>
+If and only if (clockwise==true), currentLed is incremented by one. </dd>
+<dd>
+If and only if (clockwise!=false), currentLed is decremented by one. </dd>
+<dd>
+If and only if (currentLed&gt;RED), currentLed is set to the smallest LED (BLUE). </dd>
+<dd>
+If and only if (currentLed&lt;BLUE), currentLed is set to the biggest LED (RED). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int currentLed - The number of the current LED. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="game_8h.html#a026d019671eda0cfe729200fc24d23ba">gameOver()</a> </dd>
 <dd>
 <a class="el" href="game_8h.html#a23d7d9d0b3ee3f4671ee1ec05b432f02">shouldBlinkAgain()</a>; </dd></dl>
-<p>interaction == false to avoid the situation where an interaction was true from the shouldRepeat of the previous iteration and shouldRepeat is again true, which would lead to a third repetition</p>
+
+</div>
+</div>
+<a id="ae626226c5eda23b723d67a2239b1dcf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae626226c5eda23b723d67a2239b1dcf8">&#9670;&nbsp;</a></span>highscoreSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void highscoreSound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function which plays the highscore sound. </p>
 
 </div>
 </div>
@@ -206,7 +257,8 @@ If and only if currentled is bigger then the biggest led (red), it is reset to t
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function which calculate if the led should blink for a second time. </p><dl class="section return"><dt>Returns</dt><dd>Returns a random boolean which tells if the led should blink again. </dd></dl>
+<p>Function which calculate if the LED should blink for a second time.</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a random boolean which tells if the LED should blink again. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The boolean is in 30% of the situations true and in the other 70% false. </dd></dl>
 
 </div>

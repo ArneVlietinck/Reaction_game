@@ -4,7 +4,7 @@
  * \author Simon Mastrodicasa
  * \author Arne Vlietinck
  * \version 1.0
- * \date 22/12/2017
+ * \date 30/12/2017
  */
 
 #ifndef BUTTON_H

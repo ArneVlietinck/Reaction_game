@@ -1,11 +1,17 @@
 \hypertarget{game_8cpp}{}\section{game.\+cpp File Reference}
 \label{game_8cpp}\index{game.\+cpp@{game.\+cpp}}
+
+
+The cpp-\/file of the gameplay library.  
+
+
 {\ttfamily \#include $<$miosix.\+h$>$}\newline
 {\ttfamily \#include $<$pthread.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}led.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Buzzer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}buzzer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}highscore.\+h\char`\"{}}\newline
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,9 +24,11 @@ bool \hyperlink{game_8cpp_a23d7d9d0b3ee3f4671ee1ec05b432f02}{should\+Blink\+Agai
 \item 
 void \hyperlink{game_8cpp_aa412aad3ea28593f7751a097bde6cf36}{buzzer\+Sound} ()
 \item 
+void \hyperlink{game_8cpp_ae626226c5eda23b723d67a2239b1dcf8}{highscore\+Sound} ()
+\item 
 void \hyperlink{game_8cpp_a026d019671eda0cfe729200fc24d23ba}{game\+Over} ()
 \item 
-int \hyperlink{game_8cpp_aa3f1258ae5fa1147cb52cd7374e846de}{game\+Play} (int current\+Led)
+int \hyperlink{game_8cpp_aa1607b7bd233c802d5d776c20b61ba9c}{game\+Play} (int current\+Led, bool clockwise)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -33,11 +41,17 @@ bool \hyperlink{game_8cpp_ae7f4e2b17cc634cbab911507df1b899a}{interaction}
 \item 
 int \hyperlink{game_8cpp_a016a5d341f375d13639c75bf5987fb23}{difficulty}
 \item 
+int \hyperlink{game_8cpp_acf4d33ee4cff36f69b924471174dcb11}{level}
+\item 
+int \hyperlink{game_8cpp_ae5e9542e61196e233d289084760e4ab1}{highscore}
+\item 
 pthread\+\_\+mutex\+\_\+t \hyperlink{game_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+The cpp-\/file of the gameplay library. 
+
 \begin{DoxyAuthor}{Author}
 Simon Mastrodicasa 
 
@@ -47,7 +61,7 @@ Arne Vlietinck
 1.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-22/12/2017 
+30/12/2017 
 \end{DoxyDate}
 
 
@@ -73,33 +87,47 @@ Function which plays the buzzer sound. \mbox{\Hypertarget{game_8cpp_a026d019671e
 \subsubsection{\texorpdfstring{game\+Over()}{gameOver()}}
 {\footnotesize\ttfamily void game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Function which does the game\+Over ritual. \begin{DoxyPostcond}{Postcondition}
-The buzzersound is played. 
+Function which does the game\+Over ritual.
+
+\begin{DoxyPostcond}{Postcondition}
+If and only if (level$>$highscore), the highscore sound is played. 
+
+If and only if (level$>$highscore), highscore is set to level. 
+
+If (level$<$=highscore), the buzzer sound is played. 
 
 The game\+Over blinking ritual is played. 
+
+Game is set to G\+A\+M\+E\+O\+V\+ER. 
 \end{DoxyPostcond}
 \begin{DoxySeeAlso}{See also}
 \hyperlink{game_8h_aa412aad3ea28593f7751a097bde6cf36}{buzzer\+Sound()} 
 
-\hyperlink{led_8cpp_a26db556312ad51df071dcff1e7943182}{game\+Over\+Blinking()} 
+\hyperlink{game_8h_ae626226c5eda23b723d67a2239b1dcf8}{highscore\+Sound()} 
+
+\hyperlink{led_8cpp_a31f84df1fa36897540314bb58287137a}{on\+Off\+Blinking()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{game_8cpp_aa3f1258ae5fa1147cb52cd7374e846de}\label{game_8cpp_aa3f1258ae5fa1147cb52cd7374e846de}} 
+\mbox{\Hypertarget{game_8cpp_aa1607b7bd233c802d5d776c20b61ba9c}\label{game_8cpp_aa1607b7bd233c802d5d776c20b61ba9c}} 
 \index{game.\+cpp@{game.\+cpp}!game\+Play@{game\+Play}}
 \index{game\+Play@{game\+Play}!game.\+cpp@{game.\+cpp}}
 \subsubsection{\texorpdfstring{game\+Play()}{gamePlay()}}
-{\footnotesize\ttfamily int game\+Play (\begin{DoxyParamCaption}\item[{int}]{current\+Led }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int game\+Play (\begin{DoxyParamCaption}\item[{int}]{current\+Led,  }\item[{bool}]{clockwise }\end{DoxyParamCaption})}
+
+Function which takes care of the gameplay. It checks the several possible conditions and increment or decrement the several game parameters. When the player did a wrong interaction the gameover ritual is started.
 
 
 \begin{DoxyParams}{Parameters}
-{\em int} & currentled -\/ The number of the current led. \\
+{\em int} & currentled -\/ The number of the current L\+ED. \\
+\hline
+{\em bool} & clockwise -\/ Represents the order of blinking the L\+ED\textquotesingle{}s. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyPostcond}{Postcondition}
 If and only if (interaction==false \&\& \hyperlink{game_8h_a23d7d9d0b3ee3f4671ee1ec05b432f02}{should\+Blink\+Again()}==true), interaction is set true. 
 
-If (interaction==true \&\& action==false), game\+Over ritual starts. 
+If (interaction==true \&\& action==false), \hyperlink{game_8h_a026d019671eda0cfe729200fc24d23ba}{game\+Over()} is excecuted. 
 
-If (interaction==false \&\& action==true), game\+Over ritual starts. 
+If (interaction==false \&\& action==true), \hyperlink{game_8h_a026d019671eda0cfe729200fc24d23ba}{game\+Over()} is excecuted. 
 
 If and only if (interaction==true \&\& action==true), interaction is set false. 
 
@@ -107,26 +135,40 @@ If and only if (interaction==true \&\& action==true), action is set false.
 
 If and only if (interaction==true \&\& action==true), difficulty is incremented by one. 
 
-The currentled is incremented by one. 
+If and only if (interaction==true \&\& action==true), level is incremented by one. 
 
-If and only if currentled is bigger then the biggest led (red), it is reset to the first led (blue). 
+If and only if (clockwise==true), current\+Led is incremented by one. 
+
+If and only if (clockwise!=false), current\+Led is decremented by one. 
+
+If and only if (current\+Led$>$R\+ED), current\+Led is set to the smallest L\+ED (B\+L\+UE). 
+
+If and only if (current\+Led$<$B\+L\+UE), current\+Led is set to the biggest L\+ED (R\+ED). 
 \end{DoxyPostcond}
 \begin{DoxyReturn}{Returns}
-int current\+Led -\/ The number of the current led. 
+int current\+Led -\/ The number of the current L\+ED. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 \hyperlink{game_8h_a026d019671eda0cfe729200fc24d23ba}{game\+Over()} 
 
 \hyperlink{game_8h_a23d7d9d0b3ee3f4671ee1ec05b432f02}{should\+Blink\+Again()}; 
 \end{DoxySeeAlso}
-interaction == false to avoid the situation where an interaction was true from the should\+Repeat of the previous iteration and should\+Repeat is again true, which would lead to a third repetition\mbox{\Hypertarget{game_8cpp_a23d7d9d0b3ee3f4671ee1ec05b432f02}\label{game_8cpp_a23d7d9d0b3ee3f4671ee1ec05b432f02}} 
+\mbox{\Hypertarget{game_8cpp_ae626226c5eda23b723d67a2239b1dcf8}\label{game_8cpp_ae626226c5eda23b723d67a2239b1dcf8}} 
+\index{game.\+cpp@{game.\+cpp}!highscore\+Sound@{highscore\+Sound}}
+\index{highscore\+Sound@{highscore\+Sound}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{highscore\+Sound()}{highscoreSound()}}
+{\footnotesize\ttfamily void highscore\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function which plays the highscore sound. \mbox{\Hypertarget{game_8cpp_a23d7d9d0b3ee3f4671ee1ec05b432f02}\label{game_8cpp_a23d7d9d0b3ee3f4671ee1ec05b432f02}} 
 \index{game.\+cpp@{game.\+cpp}!should\+Blink\+Again@{should\+Blink\+Again}}
 \index{should\+Blink\+Again@{should\+Blink\+Again}!game.\+cpp@{game.\+cpp}}
 \subsubsection{\texorpdfstring{should\+Blink\+Again()}{shouldBlinkAgain()}}
 {\footnotesize\ttfamily bool should\+Blink\+Again (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Function which calculate if the led should blink for a second time. \begin{DoxyReturn}{Returns}
-Returns a random boolean which tells if the led should blink again. 
+Function which calculate if the L\+ED should blink for a second time.
+
+\begin{DoxyReturn}{Returns}
+Returns a random boolean which tells if the L\+ED should blink again. 
 \end{DoxyReturn}
 \begin{DoxyNote}{Note}
 The boolean is in 30\% of the situations true and in the other 70\% false. 
@@ -140,25 +182,37 @@ The boolean is in 30\% of the situations true and in the other 70\% false.
 \subsubsection{\texorpdfstring{action}{action}}
 {\footnotesize\ttfamily bool action}
 
-Boolean which representate the action of a player. When action is true, the player did an action. When action is false, the player didn\textquotesingle{}t do an action. \mbox{\Hypertarget{game_8cpp_a016a5d341f375d13639c75bf5987fb23}\label{game_8cpp_a016a5d341f375d13639c75bf5987fb23}} 
+Boolean which represents the action of a player. If (action==true), the player did an action. Elseif (action==false), the player didn\textquotesingle{}t do an action. \mbox{\Hypertarget{game_8cpp_a016a5d341f375d13639c75bf5987fb23}\label{game_8cpp_a016a5d341f375d13639c75bf5987fb23}} 
 \index{game.\+cpp@{game.\+cpp}!difficulty@{difficulty}}
 \index{difficulty@{difficulty}!game.\+cpp@{game.\+cpp}}
 \subsubsection{\texorpdfstring{difficulty}{difficulty}}
 {\footnotesize\ttfamily int difficulty}
 
-Integer which representate the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking leds. \mbox{\Hypertarget{game_8cpp_ad8f6d257142678d59a37901ccaff0438}\label{game_8cpp_ad8f6d257142678d59a37901ccaff0438}} 
+Integer which represents the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking L\+ED\textquotesingle{}s. \mbox{\Hypertarget{game_8cpp_ad8f6d257142678d59a37901ccaff0438}\label{game_8cpp_ad8f6d257142678d59a37901ccaff0438}} 
 \index{game.\+cpp@{game.\+cpp}!game@{game}}
 \index{game@{game}!game.\+cpp@{game.\+cpp}}
 \subsubsection{\texorpdfstring{game}{game}}
 {\footnotesize\ttfamily bool game}
 
-Boolean which representate the state of the game. If game==1, the current game is finished. Elseif game==0, the current game is still going. \mbox{\Hypertarget{game_8cpp_ae7f4e2b17cc634cbab911507df1b899a}\label{game_8cpp_ae7f4e2b17cc634cbab911507df1b899a}} 
+Boolean which represents the state of the game. If (game==1), the current game is finished. Elseif (game==0), the current game is still going. \mbox{\Hypertarget{game_8cpp_ae5e9542e61196e233d289084760e4ab1}\label{game_8cpp_ae5e9542e61196e233d289084760e4ab1}} 
+\index{game.\+cpp@{game.\+cpp}!highscore@{highscore}}
+\index{highscore@{highscore}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{highscore}{highscore}}
+{\footnotesize\ttfamily int highscore}
+
+Integer which represents the current highscore of the game. \mbox{\Hypertarget{game_8cpp_ae7f4e2b17cc634cbab911507df1b899a}\label{game_8cpp_ae7f4e2b17cc634cbab911507df1b899a}} 
 \index{game.\+cpp@{game.\+cpp}!interaction@{interaction}}
 \index{interaction@{interaction}!game.\+cpp@{game.\+cpp}}
 \subsubsection{\texorpdfstring{interaction}{interaction}}
 {\footnotesize\ttfamily bool interaction}
 
-Boolean which representate the need of a players\textquotesingle{} interaction. When interaction is true, the player must do something (eg\+: press the user button) to avoid a game over. \mbox{\Hypertarget{game_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}\label{game_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}} 
+Boolean which represents the need of a players\textquotesingle{} interaction. When interaction is true, the player must do something (eg\+: press the user button) to avoid a game over. \mbox{\Hypertarget{game_8cpp_acf4d33ee4cff36f69b924471174dcb11}\label{game_8cpp_acf4d33ee4cff36f69b924471174dcb11}} 
+\index{game.\+cpp@{game.\+cpp}!level@{level}}
+\index{level@{level}!game.\+cpp@{game.\+cpp}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int level}
+
+Integer which represents the level of the game. \mbox{\Hypertarget{game_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}\label{game_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}} 
 \index{game.\+cpp@{game.\+cpp}!mutex@{mutex}}
 \index{mutex@{mutex}!game.\+cpp@{game.\+cpp}}
 \subsubsection{\texorpdfstring{mutex}{mutex}}

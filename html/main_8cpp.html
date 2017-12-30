@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Reaction_game
+   &#160;<span id="projectnumber">v1.0</span>
    </div>
-   <div id="projectbrief">A reaction game for the course Embedded systems and Advanced operating systems at Politecnico di Milano.</div>
+   <div id="projectbrief">A reaction game for Embedded Systems 1 and Advanced Operation Systems at Politecnico di Milano.</div>
   </td>
  </tr>
  </tbody>
@@ -92,6 +93,10 @@ Variables</h2></td></tr>
 <tr class="separator:ade51b3b01e72b5d342ac2e940e62b993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a016a5d341f375d13639c75bf5987fb23"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a016a5d341f375d13639c75bf5987fb23">difficulty</a></td></tr>
 <tr class="separator:a016a5d341f375d13639c75bf5987fb23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf4d33ee4cff36f69b924471174dcb11"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#acf4d33ee4cff36f69b924471174dcb11">level</a></td></tr>
+<tr class="separator:acf4d33ee4cff36f69b924471174dcb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e9542e61196e233d289084760e4ab1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae5e9542e61196e233d289084760e4ab1">highscore</a></td></tr>
+<tr class="separator:ae5e9542e61196e233d289084760e4ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4acff8232e4aec9cd5c6dc200ac55ef3"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4acff8232e4aec9cd5c6dc200ac55ef3">mutex</a> =PTHREAD_MUTEX_INITIALIZER</td></tr>
 <tr class="separator:a4acff8232e4aec9cd5c6dc200ac55ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -133,9 +138,15 @@ Arne Vlietinck </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initialisation process of the main. </p><dl class="section post"><dt>Postcondition</dt><dd>The leds are initialised. </dd>
+<p>Initialisation process of the main.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>The LED's are initialised. </dd>
 <dd>
-The button is initialised. </dd></dl>
+The button is initialised. </dd>
+<dd>
+highscore is set to 0. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="led_8cpp.html#ad7bef4224d21ecc2b1c163529be7e406">initLeds()</a> </dd>
+<dd>
+<a class="el" href="button_8cpp.html#af4bd66d08430d5410d40000c81ee8bac">configureButtonInterrupt()</a> </dd></dl>
 
 </div>
 </div>
@@ -153,13 +164,19 @@ The button is initialised. </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Reinitialisation process of the main. This is used to reset the game without a complete reset by using the computer. </p><dl class="section post"><dt>Postcondition</dt><dd>difficulty is set on 1. </dd>
+<p>Reinitialisation process of the main. This is used to reset the game without a complete reset by using the computer.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>Difficulty is set on 1. </dd>
 <dd>
 Interaction is set on false. </dd>
 <dd>
 Action is set on false while protected by mutex. </dd>
 <dd>
-Game is set on 0; </dd></dl>
+Game is set on 0. </dd>
+<dd>
+Level is set on 0. </dd>
+<dd>
+onOffBlinking(1) is executed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="led_8cpp.html#a31f84df1fa36897540314bb58287137a">onOffBlinking()</a> </dd></dl>
 
 </div>
 </div>
@@ -175,7 +192,7 @@ Game is set on 0; </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Boolean which representate the action of a player. When action is true, the player did an action. When action is false, the player didn't do an action. </p>
+<p>Boolean which represents the action of a player. If (action==true), the player did an action. Elseif (action==false), the player didn't do an action. </p>
 
 </div>
 </div>
@@ -190,7 +207,7 @@ Game is set on 0; </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Integer which representate the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking leds. </p>
+<p>Integer which represents the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking LED's. </p>
 
 </div>
 </div>
@@ -205,7 +222,22 @@ Game is set on 0; </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Boolean which representate the state of the game. If game==1, the current game is finished. Elseif game==0, the current game is still going. </p>
+<p>Boolean which represents the state of the game. If (game==1), the current game is finished. Elseif (game==0), the current game is still going. </p>
+
+</div>
+</div>
+<a id="ae5e9542e61196e233d289084760e4ab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e9542e61196e233d289084760e4ab1">&#9670;&nbsp;</a></span>highscore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int highscore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Integer which represents the current highscore of the game. </p>
 
 </div>
 </div>
@@ -220,7 +252,22 @@ Game is set on 0; </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Boolean which representate the need of a players' interaction. When interaction is true, the player must do something (eg: press the user button) to avoid a game over. </p>
+<p>Boolean which represents the need of a players' interaction. When interaction is true, the player must do something (eg: press the user button) to avoid a game over. </p>
+
+</div>
+</div>
+<a id="acf4d33ee4cff36f69b924471174dcb11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf4d33ee4cff36f69b924471174dcb11">&#9670;&nbsp;</a></span>level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int level</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Integer which represents the level of the game. </p>
 
 </div>
 </div>

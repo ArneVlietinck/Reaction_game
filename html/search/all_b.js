@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['play',['play',['../class_player.html#a895c8c46a9862e1c424720be3aa5e7d1',1,'Player']]],
-  ['player',['Player',['../class_player.html',1,'']]],
-  ['player_2ecpp',['player.cpp',['../player_8cpp.html',1,'']]],
-  ['player_2ed',['player.d',['../player_8d.html',1,'']]],
-  ['player_2eh',['player.h',['../player_8h.html',1,'']]]
+  ['onoffblinking',['onOffBlinking',['../led_8cpp.html#a31f84df1fa36897540314bb58287137a',1,'onOffBlinking(int times):&#160;led.cpp'],['../led_8h.html#a31f84df1fa36897540314bb58287137a',1,'onOffBlinking(int times):&#160;led.cpp']]],
+  ['orange',['ORANGE',['../led_8h.html#ac5b6e19bf06822021f35602c59658de3',1,'led.h']]],
+  ['orangeled',['orangeLed',['../led_8cpp.html#a6945ae649b3a1e66a8b305907ae3d5cc',1,'led.cpp']]]
 ];

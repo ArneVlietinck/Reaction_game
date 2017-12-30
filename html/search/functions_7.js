@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main',['main',['../convert_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;convert.cpp'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
-  ['maininitialisation',['mainInitialisation',['../main_8cpp.html#a25bece6219f13425fc9a180fb6327a2d',1,'main.cpp']]]
+  ['initleds',['initLeds',['../led_8cpp.html#ad7bef4224d21ecc2b1c163529be7e406',1,'initLeds():&#160;led.cpp'],['../led_8h.html#ad7bef4224d21ecc2b1c163529be7e406',1,'initLeds():&#160;led.cpp']]],
+  ['instance',['instance',['../class_player.html#a2bf5cfb2a54c9fde1432fed9eb46fe49',1,'Player']]],
+  ['isplaying',['isPlaying',['../class_player.html#a06b5d53d568f357f77df80d0859fe8db',1,'Player']]]
 ];

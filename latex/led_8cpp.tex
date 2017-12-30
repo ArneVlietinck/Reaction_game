@@ -1,5 +1,10 @@
 \hypertarget{led_8cpp}{}\section{led.\+cpp File Reference}
 \label{led_8cpp}\index{led.\+cpp@{led.\+cpp}}
+
+
+The cpp-\/file of the L\+ED library.  
+
+
 {\ttfamily \#include $<$miosix.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}led.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
@@ -19,7 +24,17 @@ typedef Gpio$<$ G\+P\+I\+O\+D\+\_\+\+B\+A\+SE, 15 $>$ \hyperlink{led_8cpp_abf9b2
 \item 
 void \hyperlink{led_8cpp_ad7bef4224d21ecc2b1c163529be7e406}{init\+Leds} ()
 \item 
+bool \hyperlink{led_8cpp_afb9ba6dbf695957481d9f3b53f207055}{clock\+Or\+Counter\+Clock\+Wise} ()
+\item 
 int \hyperlink{led_8cpp_a26142695353c128f29762dd3b6a3f54b}{calculate\+Sleep\+Time} (int \hyperlink{main_8cpp_a016a5d341f375d13639c75bf5987fb23}{difficulty})
+\item 
+void \hyperlink{led_8cpp_a12746e3079978336c716033f5ae0b7e1}{blink\+Led} (int current\+Led, int sleep\+Time)
+\item 
+void \hyperlink{led_8cpp_a63b3e6c79615c0c25433d4b1c191b94d}{blinking\+Clockwise} (int current\+Led, int sleep\+Time)
+\item 
+void \hyperlink{led_8cpp_a3d8979a7e70e05f7b95cc9066ce50f35}{blinking\+Counter\+Clockwise} (int current\+Led, int sleep\+Time)
+\item 
+void \hyperlink{led_8cpp_a0dc988caa26fa11f8bf77671a7ba3c5e}{blinkingsequence} (int current\+Led, int sleep\+Time, int \hyperlink{main_8cpp_acf4d33ee4cff36f69b924471174dcb11}{level})
 \item 
 void \hyperlink{led_8cpp_a6c6d18df77cca231909b6b527e686eff}{blinking\+Game} ()
 \item 
@@ -27,7 +42,7 @@ void \hyperlink{led_8cpp_a39576974b484c2b69eeea478fc858e63}{turn\+All\+On} ()
 \item 
 void \hyperlink{led_8cpp_a84f6740c06243b975019d0b1b1a633d2}{turn\+All\+Off} ()
 \item 
-void \hyperlink{led_8cpp_a26db556312ad51df071dcff1e7943182}{game\+Over\+Blinking} ()
+void \hyperlink{led_8cpp_a31f84df1fa36897540314bb58287137a}{on\+Off\+Blinking} (int times)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -35,10 +50,14 @@ void \hyperlink{led_8cpp_a26db556312ad51df071dcff1e7943182}{game\+Over\+Blinking
 bool \hyperlink{led_8cpp_ad8f6d257142678d59a37901ccaff0438}{game}
 \item 
 int \hyperlink{led_8cpp_a016a5d341f375d13639c75bf5987fb23}{difficulty}
+\item 
+int \hyperlink{led_8cpp_acf4d33ee4cff36f69b924471174dcb11}{level}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+The cpp-\/file of the L\+ED library. 
+
 \begin{DoxyAuthor}{Author}
 Simon Mastrodicasa 
 
@@ -80,60 +99,178 @@ Arne Vlietinck
 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{led_8cpp_a63b3e6c79615c0c25433d4b1c191b94d}\label{led_8cpp_a63b3e6c79615c0c25433d4b1c191b94d}} 
+\index{led.\+cpp@{led.\+cpp}!blinking\+Clockwise@{blinking\+Clockwise}}
+\index{blinking\+Clockwise@{blinking\+Clockwise}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{blinking\+Clockwise()}{blinkingClockwise()}}
+{\footnotesize\ttfamily void blinking\+Clockwise (\begin{DoxyParamCaption}\item[{int}]{current\+Led,  }\item[{int}]{sleep\+Time }\end{DoxyParamCaption})}
+
+Function for the clockwise blinking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & current\+Led -\/ The number of the current L\+ED. \\
+\hline
+{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+blink\+Led(current\+Led, sleep\+Time) 
+
+Sets current\+Led to game\+Play(current\+Led) 
+\end{DoxyPostcond}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{game_8cpp_aa1607b7bd233c802d5d776c20b61ba9c}{game\+Play()} 
+
+\hyperlink{led_8h_a12746e3079978336c716033f5ae0b7e1}{blink\+Led()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{led_8cpp_a3d8979a7e70e05f7b95cc9066ce50f35}\label{led_8cpp_a3d8979a7e70e05f7b95cc9066ce50f35}} 
+\index{led.\+cpp@{led.\+cpp}!blinking\+Counter\+Clockwise@{blinking\+Counter\+Clockwise}}
+\index{blinking\+Counter\+Clockwise@{blinking\+Counter\+Clockwise}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{blinking\+Counter\+Clockwise()}{blinkingCounterClockwise()}}
+{\footnotesize\ttfamily void blinking\+Counter\+Clockwise (\begin{DoxyParamCaption}\item[{int}]{current\+Led,  }\item[{int}]{sleep\+Time }\end{DoxyParamCaption})}
+
+Function for the counterclockwise blinking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & current\+Led -\/ The number of the current L\+ED. \\
+\hline
+{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+blink\+Led(current\+Led, sleep\+Time) 
+
+Sets current\+Led to game\+Play(current\+Led) 
+\end{DoxyPostcond}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{game_8cpp_aa1607b7bd233c802d5d776c20b61ba9c}{game\+Play()} 
+
+\hyperlink{led_8h_a12746e3079978336c716033f5ae0b7e1}{blink\+Led()} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{led_8cpp_a6c6d18df77cca231909b6b527e686eff}\label{led_8cpp_a6c6d18df77cca231909b6b527e686eff}} 
 \index{led.\+cpp@{led.\+cpp}!blinking\+Game@{blinking\+Game}}
 \index{blinking\+Game@{blinking\+Game}!led.\+cpp@{led.\+cpp}}
 \subsubsection{\texorpdfstring{blinking\+Game()}{blinkingGame()}}
 {\footnotesize\ttfamily void blinking\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Function with the game ritual. \begin{DoxyPostcond}{Postcondition}
-Repeat the sequence\+: Turn led x high, sleep for sleep\+Time, turn led x low, sleep for sleep\+Time, sets current\+Led to game\+Play(current\+Led) 
+Function with the game ritual.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{led_8h_a26142695353c128f29762dd3b6a3f54b}{calculate\+Sleep\+Time(int difficulty)} 
+
+\hyperlink{led_8h_a0dc988caa26fa11f8bf77671a7ba3c5e}{blinkingsequence(int current\+Led, int sleep\+Time, int level)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{led_8cpp_a0dc988caa26fa11f8bf77671a7ba3c5e}\label{led_8cpp_a0dc988caa26fa11f8bf77671a7ba3c5e}} 
+\index{led.\+cpp@{led.\+cpp}!blinkingsequence@{blinkingsequence}}
+\index{blinkingsequence@{blinkingsequence}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{blinkingsequence()}{blinkingsequence()}}
+{\footnotesize\ttfamily void blinkingsequence (\begin{DoxyParamCaption}\item[{int}]{current\+Led,  }\item[{int}]{sleep\+Time,  }\item[{int}]{level }\end{DoxyParamCaption})}
+
+Function with the gameplay for the blinking sequence.
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & current\+Led -\/ The number of the current L\+ED. \\
+\hline
+{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+\hline
+{\em int} & level -\/ Specifies the level of the current game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+If and only if (\hyperlink{led_8h_afb9ba6dbf695957481d9f3b53f207055}{clock\+Or\+Counter\+Clock\+Wise()} == true), \hyperlink{led_8h_a63b3e6c79615c0c25433d4b1c191b94d}{blinking\+Clockwise()} is excecuted. 
+
+If and only if (\hyperlink{led_8h_afb9ba6dbf695957481d9f3b53f207055}{clock\+Or\+Counter\+Clock\+Wise()} != true), \hyperlink{led_8h_a3d8979a7e70e05f7b95cc9066ce50f35}{blinking\+Counter\+Clockwise()} is excecuted. 
 \end{DoxyPostcond}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{game_8cpp_aa3f1258ae5fa1147cb52cd7374e846de}{game\+Play()} 
+\hyperlink{led_8h_afb9ba6dbf695957481d9f3b53f207055}{clock\+Or\+Counter\+Clock\+Wise()} 
+
+\hyperlink{led_8h_a63b3e6c79615c0c25433d4b1c191b94d}{blinking\+Clockwise()} 
+
+\hyperlink{led_8h_a3d8979a7e70e05f7b95cc9066ce50f35}{blinking\+Counter\+Clockwise()} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{led_8cpp_a12746e3079978336c716033f5ae0b7e1}\label{led_8cpp_a12746e3079978336c716033f5ae0b7e1}} 
+\index{led.\+cpp@{led.\+cpp}!blink\+Led@{blink\+Led}}
+\index{blink\+Led@{blink\+Led}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{blink\+Led()}{blinkLed()}}
+{\footnotesize\ttfamily void blink\+Led (\begin{DoxyParamCaption}\item[{int}]{current\+Led,  }\item[{int}]{sleep\+Time }\end{DoxyParamCaption})}
+
+Function which blinks the current\+Led (B\+L\+UE, G\+R\+E\+EN, O\+R\+A\+N\+GE, R\+ED).
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & current\+Led -\/ The number of the current L\+ED. \\
+\hline
+{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Repeat the sequence\+: Turn current\+Led high, sleep for sleep\+Time, turn current\+Led low, sleep for sleep\+Time. 
+\end{DoxyPostcond}
 \mbox{\Hypertarget{led_8cpp_a26142695353c128f29762dd3b6a3f54b}\label{led_8cpp_a26142695353c128f29762dd3b6a3f54b}} 
 \index{led.\+cpp@{led.\+cpp}!calculate\+Sleep\+Time@{calculate\+Sleep\+Time}}
 \index{calculate\+Sleep\+Time@{calculate\+Sleep\+Time}!led.\+cpp@{led.\+cpp}}
 \subsubsection{\texorpdfstring{calculate\+Sleep\+Time()}{calculateSleepTime()}}
 {\footnotesize\ttfamily int calculate\+Sleep\+Time (\begin{DoxyParamCaption}\item[{int}]{difficulty }\end{DoxyParamCaption})}
 
-Calculate the sleep\+Time between two blinks of a led. 
+Calculate the sleep\+Time between two blinks of a L\+ED.
+
+
 \begin{DoxyParams}{Parameters}
 {\em int} & difficulty -\/ The current difficulty level of the game. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int The sleep\+Time between two blinking leds. 
+int sleep\+Time -\/ The sleep\+Time between two blinking L\+ED\textquotesingle{}s. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{led_8cpp_a26db556312ad51df071dcff1e7943182}\label{led_8cpp_a26db556312ad51df071dcff1e7943182}} 
-\index{led.\+cpp@{led.\+cpp}!game\+Over\+Blinking@{game\+Over\+Blinking}}
-\index{game\+Over\+Blinking@{game\+Over\+Blinking}!led.\+cpp@{led.\+cpp}}
-\subsubsection{\texorpdfstring{game\+Over\+Blinking()}{gameOverBlinking()}}
-{\footnotesize\ttfamily void game\+Over\+Blinking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{led_8cpp_afb9ba6dbf695957481d9f3b53f207055}\label{led_8cpp_afb9ba6dbf695957481d9f3b53f207055}} 
+\index{led.\+cpp@{led.\+cpp}!clock\+Or\+Counter\+Clock\+Wise@{clock\+Or\+Counter\+Clock\+Wise}}
+\index{clock\+Or\+Counter\+Clock\+Wise@{clock\+Or\+Counter\+Clock\+Wise}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{clock\+Or\+Counter\+Clock\+Wise()}{clockOrCounterClockWise()}}
+{\footnotesize\ttfamily bool clock\+Or\+Counter\+Clock\+Wise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Game over ritual by the blinking leds. \begin{DoxyPostcond}{Postcondition}
-Repeat three times the sequence\+: Turn all leds on, sleep for 500ms, turn all leds off, sleep for 500ms. 
-\end{DoxyPostcond}
+Function which calculate if the L\+ED should blink in clock or counterclockwise.
+
+\begin{DoxyReturn}{Returns}
+Returns a random boolean which tells if the L\+ED\textquotesingle{}s should blink in clock or counterclockwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{led_8cpp_ad7bef4224d21ecc2b1c163529be7e406}\label{led_8cpp_ad7bef4224d21ecc2b1c163529be7e406}} 
 \index{led.\+cpp@{led.\+cpp}!init\+Leds@{init\+Leds}}
 \index{init\+Leds@{init\+Leds}!led.\+cpp@{led.\+cpp}}
 \subsubsection{\texorpdfstring{init\+Leds()}{initLeds()}}
 {\footnotesize\ttfamily void init\+Leds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Initialisation of the Green, Orange, Red and Blue led in output mode. \mbox{\Hypertarget{led_8cpp_a84f6740c06243b975019d0b1b1a633d2}\label{led_8cpp_a84f6740c06243b975019d0b1b1a633d2}} 
+Initialisation of the Green, Orange, Red and Blue L\+ED in output mode. \mbox{\Hypertarget{led_8cpp_a31f84df1fa36897540314bb58287137a}\label{led_8cpp_a31f84df1fa36897540314bb58287137a}} 
+\index{led.\+cpp@{led.\+cpp}!on\+Off\+Blinking@{on\+Off\+Blinking}}
+\index{on\+Off\+Blinking@{on\+Off\+Blinking}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{on\+Off\+Blinking()}{onOffBlinking()}}
+{\footnotesize\ttfamily void on\+Off\+Blinking (\begin{DoxyParamCaption}\item[{int}]{times }\end{DoxyParamCaption})}
+
+On off blinking ritual by L\+ED\textquotesingle{}s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & times -\/ Number of times the L\+ED\textquotesingle{}s should blink. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Repeat -\/ times -\/ the sequence\+: turn all L\+ED\textquotesingle{}s on, sleep for 500ms, turn all L\+ED\textquotesingle{}s off, sleep for 500ms. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{led_8cpp_a84f6740c06243b975019d0b1b1a633d2}\label{led_8cpp_a84f6740c06243b975019d0b1b1a633d2}} 
 \index{led.\+cpp@{led.\+cpp}!turn\+All\+Off@{turn\+All\+Off}}
 \index{turn\+All\+Off@{turn\+All\+Off}!led.\+cpp@{led.\+cpp}}
 \subsubsection{\texorpdfstring{turn\+All\+Off()}{turnAllOff()}}
 {\footnotesize\ttfamily void turn\+All\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Turn Red, Blue, Green and Orange leds off. \mbox{\Hypertarget{led_8cpp_a39576974b484c2b69eeea478fc858e63}\label{led_8cpp_a39576974b484c2b69eeea478fc858e63}} 
+Turn Red, Blue, Green and Orange L\+ED\textquotesingle{}s off. \mbox{\Hypertarget{led_8cpp_a39576974b484c2b69eeea478fc858e63}\label{led_8cpp_a39576974b484c2b69eeea478fc858e63}} 
 \index{led.\+cpp@{led.\+cpp}!turn\+All\+On@{turn\+All\+On}}
 \index{turn\+All\+On@{turn\+All\+On}!led.\+cpp@{led.\+cpp}}
 \subsubsection{\texorpdfstring{turn\+All\+On()}{turnAllOn()}}
 {\footnotesize\ttfamily void turn\+All\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Turn Red, Blue, Green and Orange leds on. 
+Turn Red, Blue, Green and Orange L\+ED\textquotesingle{}s on. 
 
 \subsection{Variable Documentation}
 \mbox{\Hypertarget{led_8cpp_a016a5d341f375d13639c75bf5987fb23}\label{led_8cpp_a016a5d341f375d13639c75bf5987fb23}} 
@@ -142,10 +279,16 @@ Turn Red, Blue, Green and Orange leds on.
 \subsubsection{\texorpdfstring{difficulty}{difficulty}}
 {\footnotesize\ttfamily int difficulty}
 
-Integer which representate the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking leds. \mbox{\Hypertarget{led_8cpp_ad8f6d257142678d59a37901ccaff0438}\label{led_8cpp_ad8f6d257142678d59a37901ccaff0438}} 
+Integer which represents the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking L\+ED\textquotesingle{}s. \mbox{\Hypertarget{led_8cpp_ad8f6d257142678d59a37901ccaff0438}\label{led_8cpp_ad8f6d257142678d59a37901ccaff0438}} 
 \index{led.\+cpp@{led.\+cpp}!game@{game}}
 \index{game@{game}!led.\+cpp@{led.\+cpp}}
 \subsubsection{\texorpdfstring{game}{game}}
 {\footnotesize\ttfamily bool game}
 
-Boolean which representate the state of the game. If game==1, the current game is finished. Elseif game==0, the current game is still going. 
+Boolean which represents the state of the game. If (game==1), the current game is finished. Elseif (game==0), the current game is still going. \mbox{\Hypertarget{led_8cpp_acf4d33ee4cff36f69b924471174dcb11}\label{led_8cpp_acf4d33ee4cff36f69b924471174dcb11}} 
+\index{led.\+cpp@{led.\+cpp}!level@{level}}
+\index{level@{level}!led.\+cpp@{led.\+cpp}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int level}
+
+Integer which represents the level of the game. 

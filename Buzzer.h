@@ -3,10 +3,11 @@
  * \author Simon Mastrodicasa
  * \author Arne Vlietinck
  * \version 1.0
- * \date 22/12/2017
+ * \date 30/12/2017
  *
  * \brief The h-file for the buzzer sound. It contains the buzzer_bin[], which
- *representates the fault of a the player.
+ *representates the char array for the buzzer sound to emphasize the fault
+ *of the player.
  */
 const unsigned char buzzer_bin[] = {
   0x00, 0xa1, 0xb3, 0x93, 0x3a, 0x3b, 0x1a, 0x00, 0x39, 0x3c, 0x4b, 0x1a,

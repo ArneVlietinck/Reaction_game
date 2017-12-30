@@ -26,6 +26,10 @@ bool \hyperlink{main_8cpp_ade51b3b01e72b5d342ac2e940e62b993}{action}
 \item 
 int \hyperlink{main_8cpp_a016a5d341f375d13639c75bf5987fb23}{difficulty}
 \item 
+int \hyperlink{main_8cpp_acf4d33ee4cff36f69b924471174dcb11}{level}
+\item 
+int \hyperlink{main_8cpp_ae5e9542e61196e233d289084760e4ab1}{highscore}
+\item 
 pthread\+\_\+mutex\+\_\+t \hyperlink{main_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex} =P\+T\+H\+R\+E\+A\+D\+\_\+\+M\+U\+T\+E\+X\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER
 \end{DoxyCompactItemize}
 
@@ -57,26 +61,44 @@ Arne Vlietinck
 \subsubsection{\texorpdfstring{main\+Initialisation()}{mainInitialisation()}}
 {\footnotesize\ttfamily void main\+Initialisation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Initialisation process of the main. \begin{DoxyPostcond}{Postcondition}
-The leds are initialised. 
+Initialisation process of the main.
+
+\begin{DoxyPostcond}{Postcondition}
+The L\+ED\textquotesingle{}s are initialised. 
 
 The button is initialised. 
+
+highscore is set to 0. 
 \end{DoxyPostcond}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{led_8cpp_ad7bef4224d21ecc2b1c163529be7e406}{init\+Leds()} 
+
+\hyperlink{button_8cpp_af4bd66d08430d5410d40000c81ee8bac}{configure\+Button\+Interrupt()} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{main_8cpp_a1ff037f2dd9734a134f2cdda5406b5b9}\label{main_8cpp_a1ff037f2dd9734a134f2cdda5406b5b9}} 
 \index{main.\+cpp@{main.\+cpp}!re\+Initialisation@{re\+Initialisation}}
 \index{re\+Initialisation@{re\+Initialisation}!main.\+cpp@{main.\+cpp}}
 \subsubsection{\texorpdfstring{re\+Initialisation()}{reInitialisation()}}
 {\footnotesize\ttfamily void re\+Initialisation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Reinitialisation process of the main. This is used to reset the game without a complete reset by using the computer. \begin{DoxyPostcond}{Postcondition}
-difficulty is set on 1. 
+Reinitialisation process of the main. This is used to reset the game without a complete reset by using the computer.
+
+\begin{DoxyPostcond}{Postcondition}
+Difficulty is set on 1. 
 
 Interaction is set on false. 
 
 Action is set on false while protected by mutex. 
 
-Game is set on 0; 
+Game is set on 0. 
+
+Level is set on 0. 
+
+on\+Off\+Blinking(1) is executed. 
 \end{DoxyPostcond}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{led_8cpp_a31f84df1fa36897540314bb58287137a}{on\+Off\+Blinking()} 
+\end{DoxySeeAlso}
 
 
 \subsection{Variable Documentation}
@@ -86,25 +108,37 @@ Game is set on 0;
 \subsubsection{\texorpdfstring{action}{action}}
 {\footnotesize\ttfamily bool action}
 
-Boolean which representate the action of a player. When action is true, the player did an action. When action is false, the player didn\textquotesingle{}t do an action. \mbox{\Hypertarget{main_8cpp_a016a5d341f375d13639c75bf5987fb23}\label{main_8cpp_a016a5d341f375d13639c75bf5987fb23}} 
+Boolean which represents the action of a player. If (action==true), the player did an action. Elseif (action==false), the player didn\textquotesingle{}t do an action. \mbox{\Hypertarget{main_8cpp_a016a5d341f375d13639c75bf5987fb23}\label{main_8cpp_a016a5d341f375d13639c75bf5987fb23}} 
 \index{main.\+cpp@{main.\+cpp}!difficulty@{difficulty}}
 \index{difficulty@{difficulty}!main.\+cpp@{main.\+cpp}}
 \subsubsection{\texorpdfstring{difficulty}{difficulty}}
 {\footnotesize\ttfamily int difficulty}
 
-Integer which representate the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking leds. \mbox{\Hypertarget{main_8cpp_ad8f6d257142678d59a37901ccaff0438}\label{main_8cpp_ad8f6d257142678d59a37901ccaff0438}} 
+Integer which represents the difficulty level of the game. Higher integer means higher degree of difficulty. It affects the time between the blinking L\+ED\textquotesingle{}s. \mbox{\Hypertarget{main_8cpp_ad8f6d257142678d59a37901ccaff0438}\label{main_8cpp_ad8f6d257142678d59a37901ccaff0438}} 
 \index{main.\+cpp@{main.\+cpp}!game@{game}}
 \index{game@{game}!main.\+cpp@{main.\+cpp}}
 \subsubsection{\texorpdfstring{game}{game}}
 {\footnotesize\ttfamily bool game}
 
-Boolean which representate the state of the game. If game==1, the current game is finished. Elseif game==0, the current game is still going. \mbox{\Hypertarget{main_8cpp_ae7f4e2b17cc634cbab911507df1b899a}\label{main_8cpp_ae7f4e2b17cc634cbab911507df1b899a}} 
+Boolean which represents the state of the game. If (game==1), the current game is finished. Elseif (game==0), the current game is still going. \mbox{\Hypertarget{main_8cpp_ae5e9542e61196e233d289084760e4ab1}\label{main_8cpp_ae5e9542e61196e233d289084760e4ab1}} 
+\index{main.\+cpp@{main.\+cpp}!highscore@{highscore}}
+\index{highscore@{highscore}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{highscore}{highscore}}
+{\footnotesize\ttfamily int highscore}
+
+Integer which represents the current highscore of the game. \mbox{\Hypertarget{main_8cpp_ae7f4e2b17cc634cbab911507df1b899a}\label{main_8cpp_ae7f4e2b17cc634cbab911507df1b899a}} 
 \index{main.\+cpp@{main.\+cpp}!interaction@{interaction}}
 \index{interaction@{interaction}!main.\+cpp@{main.\+cpp}}
 \subsubsection{\texorpdfstring{interaction}{interaction}}
 {\footnotesize\ttfamily bool interaction}
 
-Boolean which representate the need of a players\textquotesingle{} interaction. When interaction is true, the player must do something (eg\+: press the user button) to avoid a game over. \mbox{\Hypertarget{main_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}\label{main_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}} 
+Boolean which represents the need of a players\textquotesingle{} interaction. When interaction is true, the player must do something (eg\+: press the user button) to avoid a game over. \mbox{\Hypertarget{main_8cpp_acf4d33ee4cff36f69b924471174dcb11}\label{main_8cpp_acf4d33ee4cff36f69b924471174dcb11}} 
+\index{main.\+cpp@{main.\+cpp}!level@{level}}
+\index{level@{level}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int level}
+
+Integer which represents the level of the game. \mbox{\Hypertarget{main_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}\label{main_8cpp_a4acff8232e4aec9cd5c6dc200ac55ef3}} 
 \index{main.\+cpp@{main.\+cpp}!mutex@{mutex}}
 \index{mutex@{mutex}!main.\+cpp@{main.\+cpp}}
 \subsubsection{\texorpdfstring{mutex}{mutex}}

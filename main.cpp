@@ -3,7 +3,7 @@
  * \author Simon Mastrodicasa
  * \author Arne Vlietinck
  * \version 1.0
- * \date 22/12/2017
+ * \date 30/12/2017
  */
 
 #include <miosix.h>
@@ -17,8 +17,8 @@ using namespace miosix;
 
 /**
  * Boolean which represents the state of the game.
- * If game==1, the current game is finished.
- * Elseif game==0, the current game is still going.
+ * If (game==1), the current game is finished.
+ * Elseif (game==0), the current game is still going.
  */
 bool game;
 
@@ -31,21 +31,20 @@ bool interaction;
 
 /**
  * Boolean which represents the action of a player.
- * When action is true, the player did an action.
- * When action is false, the player didn't do an action.
+ * If (action==true), the player did an action.
+ * Elseif (action==false), the player didn't do an action.
  */
 bool action;
 
 /**
  * Integer which represents the difficulty level of the game.
  * Higher integer means higher degree of difficulty.
- * It affects the time between the blinking leds.
+ * It affects the time between the blinking LED's.
  */
 int difficulty;
 
 /**
  * Integer which represents the level of the game.
- * There are several gameplays implemented depending on the game level.
  */
 int level;
 
@@ -63,7 +62,7 @@ int highscore;
 /**
  * Initialisation process of the main.
  *
- * @post The leds are initialised.
+ * @post The LED's are initialised.
  * @post The button is initialised.
  * @post highscore is set to 0.
  * @see initLeds()
@@ -105,23 +104,30 @@ void reInitialisation(){
  *
  * \section Introduction
  *
- * This game is made for the discoveryboard STM32F407G.
+ * This game is developed with the Miosix kernel and made for the discoveryboard
+ *STM32F407G.
  * It is a project for Embedded Systems 1 and Advanced Operating Systems
  *of prof. William Fornaciari at the Politecnico di Milano.
  *
  * \section Gameplay
  *
- * The game starts when the player pushes on the button. To emphasize that the
- *game starts, the four leds will blink once. From then on each button push can
- *cause gameover. The blinking ritual will start with the blue led and goes
+ * The game starts when the player pushes on the button. To emphasize the start
+ *of the game, the four LED's will blink once. From then on each button push can
+ *cause gameover. The blinking ritual will start with the blue LED and goes
  *random clockwise or counterclockwise. The main issue of the game is pushing
- *the button when the led (blue/green/orange/red) blinks twice. If the player
+ *the button when the LED (blue/green/orange/red) blinks twice. If the player
  *pushes the button correctly the time between the blinks will be shorter and
  *consequentely the game will become more difficult.
  * If the player pushes the button to late or in a wrong situation
- *then the board will play a buzzer sound. After the buzzer sound,
- *the game will start over again with blinking the leds 3 times.
- * Good Luck!
+ *then the board will play a buzzer sound or a highscore sound.
+ *After the buzzer/highscore sound, the game will start over again
+ *with blinking the LED's 3 times.
+ * Have Fun!
+ *
+ * \section Improvements
+ *
+ * Some improvements are listed in the issue area of the git repository. They
+ *are signed with the label "extra feature".
  */
 int main()
 {

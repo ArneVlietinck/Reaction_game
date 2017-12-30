@@ -3,7 +3,9 @@
  * \author Simon Mastrodicasa
  * \author Arne Vlietinck
  * \version 1.0
- * \date 22/12/2017
+ * \date 30/12/2017
+ *
+ * \brief The cpp-file of the LED library.
  */
 
 #include <miosix.h>
@@ -156,7 +158,6 @@ void blinkingGame()
 {
     int currentLed = BLUE;
     int sleepTime = calculateSleepTime(difficulty);
-    level++;
 
     blinkingsequence(currentLed, sleepTime, level);
 }

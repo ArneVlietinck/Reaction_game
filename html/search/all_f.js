@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['waitforbutton',['waitForButton',['../button_8cpp.html#a906c879d4d5d9f61eb62e7c7d2845ffe',1,'waitForButton():&#160;button.cpp'],['../button_8h.html#a906c879d4d5d9f61eb62e7c7d2845ffe',1,'waitForButton():&#160;button.cpp']]]
+  ['turnalloff',['turnAllOff',['../led_8cpp.html#a84f6740c06243b975019d0b1b1a633d2',1,'turnAllOff():&#160;led.cpp'],['../led_8h.html#a84f6740c06243b975019d0b1b1a633d2',1,'turnAllOff():&#160;led.cpp']]],
+  ['turnallon',['turnAllOn',['../led_8cpp.html#a39576974b484c2b69eeea478fc858e63',1,'turnAllOn():&#160;led.cpp'],['../led_8h.html#a39576974b484c2b69eeea478fc858e63',1,'turnAllOn():&#160;led.cpp']]]
 ];

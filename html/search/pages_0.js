@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['my_20personal_20index_20page',['My Personal Index Page',['../index.html',1,'']]]
+  ['blinking_20reaction_20game',['Blinking Reaction Game',['../index.html',1,'']]]
 ];

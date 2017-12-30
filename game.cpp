@@ -3,7 +3,9 @@
  * \author Simon Mastrodicasa
  * \author Arne Vlietinck
  * \version 1.0
- * \date 22/12/2017
+ * \date 30/12/2017
+ *
+ * \brief The cpp-file of the gameplay library.
  */
 
 #include <miosix.h>
@@ -53,7 +55,7 @@ void highscoreSound()
 
 void gameOver()
 {
-    if(level > highscore){
+    if(level>highscore){
       highscoreSound();
       highscore = level;
     }

@@ -3,7 +3,9 @@
  * \author Simon Mastrodicasa
  * \author Arne Vlietinck
  * \version 1.0
- * \date 22/12/2017
+ * \date 30/12/2017
+ *
+ * \brief The h-file of the gameplay library.
  */
 
 #ifndef GAME_H
@@ -12,9 +14,9 @@
 #define GAMEOVER 1
 
 /**
- * Function which calculate if the led should blink for a second time.
+ * Function which calculate if the LED should blink for a second time.
  *
- * @return Returns a random boolean which tells if the led should blink again.
+ * @return Returns a random boolean which tells if the LED should blink again.
  * @note The boolean is in 30% of the situations true and in the other 70% false.
  */
 bool shouldBlinkAgain();
@@ -32,11 +34,9 @@ void highscoreSound();
 /**
  * Function which does the gameOver ritual.
  *
- * @post If and only if level is bigger than highscore,
- *the highscoresound is played.
- * @post If and only if level is bigger than highscore,
- *highscore is set to level.
- * @post If level is nog bigger than highscore, the buzzersound is played.
+ * @post If and only if (level>highscore), the highscore sound is played.
+ * @post If and only if (level>highscore), highscore is set to level.
+ * @post If (level<=highscore), the buzzer sound is played.
  * @post The gameOver blinking ritual is played.
  * @post Game is set to GAMEOVER.
  * @see buzzerSound()
@@ -46,21 +46,24 @@ void highscoreSound();
 void gameOver();
 
 /**
+ * Function which takes care of the gameplay. It checks the several possible
+ *conditions and increment or decrement the several game parameters. When the
+ *player did a wrong interaction the gameover ritual is started.
  *
- * @param int currentled - The number of the current led.
- * @param bool clockwise - Represents the order of blinking the leds.
+ * @param int currentled - The number of the current LED.
+ * @param bool clockwise - Represents the order of blinking the LED's.
  * @post If and only if (interaction==false && shouldBlinkAgain()==true), interaction is set true.
- * @post If (interaction==true && action==false), gameOver ritual starts.
- * @post If (interaction==false && action==true), gameOver ritual starts.
+ * @post If (interaction==true && action==false), gameOver() is excecuted.
+ * @post If (interaction==false && action==true), gameOver() is excecuted.
  * @post If and only if (interaction==true && action==true), interaction is set false.
  * @post If and only if (interaction==true && action==true), action is set false.
  * @post If and only if (interaction==true && action==true), difficulty is incremented by one.
  * @post If and only if (interaction==true && action==true), level is incremented by one.
  * @post If and only if (clockwise==true), currentLed is incremented by one.
  * @post If and only if (clockwise!=false), currentLed is decremented by one.
- * @post If and only if (currentLed>RED), it is reset to the smallest led (BLUE).
- * @post If and only if (currentLed<BLUE), it is reset to the biggest led (RED).
- * @return int currentLed - The number of the current led.
+ * @post If and only if (currentLed>RED), currentLed is set to the smallest LED (BLUE).
+ * @post If and only if (currentLed<BLUE), currentLed is set to the biggest LED (RED).
+ * @return int currentLed - The number of the current LED.
  * @see gameOver()
  * @see shouldBlinkAgain();
  */
