@@ -50,6 +50,11 @@ int difficulty;
 int level;
 
 /**
+ * Integer which represents the current highscore of the game.
+ */
+int highscore;
+
+/**
  * A pthread_mutex_t variable to prevent a race condition when changing action.
  */
  pthread_mutex_t mutex=PTHREAD_MUTEX_INITIALIZER;
@@ -60,11 +65,15 @@ int level;
  *
  * @post The leds are initialised.
  * @post The button is initialised.
+ * @post highscore is set to 0.
+ * @see initLeds()
+ * @see configureButtonInterrupt()
  */
 void mainInitialisation()
 {
   initLeds();
   configureButtonInterrupt();
+  highscore = 0;
 }
 
 /**
@@ -75,6 +84,7 @@ void mainInitialisation()
  * @post Interaction is set on false.
  * @post Action is set on false while protected by mutex.
  * @post Game is set on 0.
+ * @post Level is set on 0.
  * @post onOffBlinking(1) is executed.
  * @see onOffBlinking()
  */

@@ -12,6 +12,7 @@
 #include "led.h"
 #include "player.h"
 #include "buzzer.h"
+#include "highscore.h"
 
 using namespace miosix;
 
@@ -21,6 +22,8 @@ extern bool action;
 extern bool game;
 extern bool interaction;
 extern int difficulty;
+extern int level;
+extern int highscore;
 extern pthread_mutex_t mutex;
 
 bool shouldBlinkAgain()
@@ -42,9 +45,21 @@ void buzzerSound()
     Player::instance().play(sound);
 }
 
+void highscoreSound()
+{
+    ADPCMSound sound(highscore_bin,highscore_bin_len);
+    Player::instance().play(sound);
+}
+
 void gameOver()
 {
-    buzzerSound();
+    if(level > highscore){
+      highscoreSound();
+      highscore = level;
+    }
+    else{
+      buzzerSound();
+    }
     onOffBlinking(2);
     game = GAMEOVER;
 }
@@ -91,6 +106,7 @@ int gamePlay(int currentLed, bool clockwise)
         }
         //Game becomes more challenging.
         difficulty++;
+        level++;
     }
     else
     {
