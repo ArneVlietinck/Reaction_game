@@ -5,9 +5,9 @@
  * \version 1.0
  * \date 30/12/2017
  *
- * \brief The h-file for the highscore sound. It contains the highscore_bin[],
- *which representates the char array for the highscore sound to emphasize
- *a new highscore of the player.
+ * \brief The h-file for the high score sound. It contains the highscore_bin[],
+ *which representates the char array for the high score sound to emphasize
+ *a new high score of the player.
  */
  const unsigned char highscore_bin[] = {
   0x00, 0x90, 0xb2, 0xb3, 0x92, 0xa1, 0x02, 0x4b, 0x1b, 0xd2, 0xa3, 0x92,

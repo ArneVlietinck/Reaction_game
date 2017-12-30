@@ -67,7 +67,7 @@ Arne Vlietinck
 1.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-22/12/2017 
+30/12/2017 
 \end{DoxyDate}
 
 
@@ -111,7 +111,7 @@ Function for the clockwise blinking.
 \begin{DoxyParams}{Parameters}
 {\em int} & current\+Led -\/ The number of the current L\+ED. \\
 \hline
-{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+{\em int} & sleep\+Time -\/ The sleeptime between the on and off initialistation of the L\+ED. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyPostcond}{Postcondition}
@@ -136,7 +136,7 @@ Function for the counterclockwise blinking.
 \begin{DoxyParams}{Parameters}
 {\em int} & current\+Led -\/ The number of the current L\+ED. \\
 \hline
-{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+{\em int} & sleep\+Time -\/ The sleeptime between the on and off initialistation of the L\+ED. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyPostcond}{Postcondition}
@@ -174,7 +174,7 @@ Function with the gameplay for the blinking sequence.
 \begin{DoxyParams}{Parameters}
 {\em int} & current\+Led -\/ The number of the current L\+ED. \\
 \hline
-{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+{\em int} & sleep\+Time -\/ The sleeptime between the on and off initialistation of the L\+ED. \\
 \hline
 {\em int} & level -\/ Specifies the level of the current game. \\
 \hline
@@ -203,7 +203,7 @@ Function which blinks the current\+Led (B\+L\+UE, G\+R\+E\+EN, O\+R\+A\+N\+GE, R
 \begin{DoxyParams}{Parameters}
 {\em int} & current\+Led -\/ The number of the current L\+ED. \\
 \hline
-{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+{\em int} & sleep\+Time -\/ The sleeptime between the on and off initialistation of the L\+ED. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyPostcond}{Postcondition}
@@ -215,7 +215,7 @@ Repeat the sequence\+: Turn current\+Led high, sleep for sleep\+Time, turn curre
 \subsubsection{\texorpdfstring{calculate\+Sleep\+Time()}{calculateSleepTime()}}
 {\footnotesize\ttfamily int calculate\+Sleep\+Time (\begin{DoxyParamCaption}\item[{int}]{difficulty }\end{DoxyParamCaption})}
 
-Calculate the sleep\+Time between two blinks of a L\+ED.
+Calculate the sleep\+Time between the on and off initialistation of the L\+ED.
 
 
 \begin{DoxyParams}{Parameters}
@@ -223,7 +223,7 @@ Calculate the sleep\+Time between two blinks of a L\+ED.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int sleep\+Time -\/ The sleep\+Time between two blinking L\+ED\textquotesingle{}s. 
+int sleep\+Time -\/ The sleep\+Time between the on and off initialistation of the L\+ED. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{led_8cpp_afb9ba6dbf695957481d9f3b53f207055}\label{led_8cpp_afb9ba6dbf695957481d9f3b53f207055}} 
 \index{led.\+cpp@{led.\+cpp}!clock\+Or\+Counter\+Clock\+Wise@{clock\+Or\+Counter\+Clock\+Wise}}
@@ -285,7 +285,7 @@ Integer which represents the difficulty level of the game. Higher integer means 
 \subsubsection{\texorpdfstring{game}{game}}
 {\footnotesize\ttfamily bool game}
 
-Boolean which represents the state of the game. If (game==1), the current game is finished. Elseif (game==0), the current game is still going. \mbox{\Hypertarget{led_8cpp_acf4d33ee4cff36f69b924471174dcb11}\label{led_8cpp_acf4d33ee4cff36f69b924471174dcb11}} 
+Boolean which represents the state of the game. If (game==1), the current game is finished. Elseif (game==0), the current game is still running. \mbox{\Hypertarget{led_8cpp_acf4d33ee4cff36f69b924471174dcb11}\label{led_8cpp_acf4d33ee4cff36f69b924471174dcb11}} 
 \index{led.\+cpp@{led.\+cpp}!level@{level}}
 \index{level@{level}!led.\+cpp@{led.\+cpp}}
 \subsubsection{\texorpdfstring{level}{level}}

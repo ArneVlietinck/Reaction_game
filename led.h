@@ -30,10 +30,10 @@ void initLeds();
 bool clockOrCounterClockWise();
 
 /**
- * Calculate the sleepTime between two blinks of a LED.
+ * Calculate the sleepTime between the on and off initialistation of the LED.
  *
  * @param int difficulty - The current difficulty level of the game.
- * @return int sleepTime - The sleepTime between two blinking LED's.
+ * @return int sleepTime - The sleepTime between the on and off initialistation of the LED.
  */
 int calculateSleepTime(int difficulty);
 
@@ -41,7 +41,7 @@ int calculateSleepTime(int difficulty);
  * Function which blinks the currentLed (BLUE, GREEN, ORANGE, RED).
  *
  * @param int currentLed - The number of the current LED.
- * @param int sleepTime - The sleeptime between two blinking LED's.
+ * @param int sleepTime - The sleeptime between the on and off initialistation of the LED.
  * @post Repeat the sequence: Turn currentLed high, sleep for sleepTime,
  *turn currentLed low, sleep for sleepTime.
  */
@@ -51,7 +51,7 @@ void blinkLed(int currentLed, int sleepTime);
  * Function for the clockwise blinking.
  *
  * @param int currentLed - The number of the current LED.
- * @param int sleepTime - The sleeptime between two blinking LED's.
+ * @param int sleepTime - The sleeptime between the on and off initialistation of the LED.
  * @post blinkLed(currentLed, sleepTime)
  * @post Sets currentLed to gamePlay(currentLed)
  * @see gamePlay()
@@ -63,7 +63,7 @@ void blinkingClockwise(int currentLed, int sleepTime);
  * Function for the counterclockwise blinking.
  *
  * @param int currentLed - The number of the current LED.
- * @param int sleepTime - The sleeptime between two blinking LED's.
+ * @param int sleepTime - The sleeptime between the on and off initialistation of the LED.
  * @post blinkLed(currentLed, sleepTime)
  * @post Sets currentLed to gamePlay(currentLed)
  * @see gamePlay()
@@ -75,7 +75,7 @@ void blinkingCounterClockwise(int currentLed, int sleepTime);
  * Function with the gameplay for the blinking sequence.
  *
  * @param int currentLed - The number of the current LED.
- * @param int sleepTime - The sleeptime between two blinking LED's.
+ * @param int sleepTime - The sleeptime between the on and off initialistation of the LED.
  * @param int level - Specifies the level of the current game.
  * @post If and only if (clockOrCounterClockWise() == true),
  *blinkingClockwise() is excecuted.

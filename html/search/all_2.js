@@ -11,9 +11,9 @@ var searchData=
   ['button_2ecpp',['button.cpp',['../button_8cpp.html',1,'']]],
   ['button_2ed',['button.d',['../button_8d.html',1,'']]],
   ['button_2eh',['button.h',['../button_8h.html',1,'']]],
-  ['buzzer_2eh',['buzzer.h',['../buzzer_8h.html',1,'']]],
-  ['buzzer_5fbin',['buzzer_bin',['../buzzer_8h.html#a16fb99d8f19208fcdc658ed59f10ae1b',1,'buzzer.h']]],
-  ['buzzer_5fbin_5flen',['buzzer_bin_len',['../buzzer_8h.html#a9758d94719afe6199272d1c89870a1c4',1,'buzzer.h']]],
+  ['buzzer_2eh',['Buzzer.h',['../_buzzer_8h.html',1,'']]],
+  ['buzzer_5fbin',['buzzer_bin',['../_buzzer_8h.html#a16fb99d8f19208fcdc658ed59f10ae1b',1,'Buzzer.h']]],
+  ['buzzer_5fbin_5flen',['buzzer_bin_len',['../_buzzer_8h.html#a9758d94719afe6199272d1c89870a1c4',1,'Buzzer.h']]],
   ['buzzersound',['buzzerSound',['../game_8cpp.html#aa412aad3ea28593f7751a097bde6cf36',1,'buzzerSound():&#160;game.cpp'],['../game_8h.html#aa412aad3ea28593f7751a097bde6cf36',1,'buzzerSound():&#160;game.cpp']]],
   ['blinking_20reaction_20game',['Blinking Reaction Game',['../index.html',1,'']]]
 ];

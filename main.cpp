@@ -18,14 +18,14 @@ using namespace miosix;
 /**
  * Boolean which represents the state of the game.
  * If (game==1), the current game is finished.
- * Elseif (game==0), the current game is still going.
+ * Elseif (game==0), the current game is still running.
  */
 bool game;
 
 /**
  * Boolean which represents the need of a players' interaction.
  * When interaction is true, the player must do something
- * (eg: press the user button) to avoid a game over.
+ * (e.g. press the user button) to avoid a game over.
  */
 bool interaction;
 
@@ -49,7 +49,7 @@ int difficulty;
 int level;
 
 /**
- * Integer which represents the current highscore of the game.
+ * Integer which represents the current high score of the game.
  */
 int highscore;
 
@@ -119,8 +119,8 @@ void reInitialisation(){
  *pushes the button correctly the time between the blinks will be shorter and
  *consequentely the game will become more difficult.
  * If the player pushes the button to late or in a wrong situation
- *then the board will play a buzzer sound or a highscore sound.
- *After the buzzer/highscore sound, the game will start over again
+ *then the board will play a buzzer sound or a high score sound.
+ *After the buzzer/high score sound, the game will start over again
  *with blinking the LED's 3 times.
  * Have Fun!
  *

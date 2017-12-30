@@ -27,14 +27,14 @@ bool shouldBlinkAgain();
 void buzzerSound();
 
 /**
- * Function which plays the highscore sound.
+ * Function which plays the high score sound.
  */
 void highscoreSound();
 
 /**
  * Function which does the gameOver ritual.
  *
- * @post If and only if (level>highscore), the highscore sound is played.
+ * @post If and only if (level>highscore), the high score sound is played.
  * @post If and only if (level>highscore), highscore is set to level.
  * @post If (level<=highscore), the buzzer sound is played.
  * @post The gameOver blinking ritual is played.

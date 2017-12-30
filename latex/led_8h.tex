@@ -55,7 +55,7 @@ Arne Vlietinck
 1.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-22/12/2017 
+30/12/2017 
 \end{DoxyDate}
 
 
@@ -99,7 +99,7 @@ Function for the clockwise blinking.
 \begin{DoxyParams}{Parameters}
 {\em int} & current\+Led -\/ The number of the current L\+ED. \\
 \hline
-{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+{\em int} & sleep\+Time -\/ The sleeptime between the on and off initialistation of the L\+ED. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyPostcond}{Postcondition}
@@ -124,7 +124,7 @@ Function for the counterclockwise blinking.
 \begin{DoxyParams}{Parameters}
 {\em int} & current\+Led -\/ The number of the current L\+ED. \\
 \hline
-{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+{\em int} & sleep\+Time -\/ The sleeptime between the on and off initialistation of the L\+ED. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyPostcond}{Postcondition}
@@ -162,7 +162,7 @@ Function with the gameplay for the blinking sequence.
 \begin{DoxyParams}{Parameters}
 {\em int} & current\+Led -\/ The number of the current L\+ED. \\
 \hline
-{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+{\em int} & sleep\+Time -\/ The sleeptime between the on and off initialistation of the L\+ED. \\
 \hline
 {\em int} & level -\/ Specifies the level of the current game. \\
 \hline
@@ -191,7 +191,7 @@ Function which blinks the current\+Led (B\+L\+UE, G\+R\+E\+EN, O\+R\+A\+N\+GE, R
 \begin{DoxyParams}{Parameters}
 {\em int} & current\+Led -\/ The number of the current L\+ED. \\
 \hline
-{\em int} & sleep\+Time -\/ The sleeptime between two blinking L\+ED\textquotesingle{}s. \\
+{\em int} & sleep\+Time -\/ The sleeptime between the on and off initialistation of the L\+ED. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyPostcond}{Postcondition}
@@ -203,7 +203,7 @@ Repeat the sequence\+: Turn current\+Led high, sleep for sleep\+Time, turn curre
 \subsubsection{\texorpdfstring{calculate\+Sleep\+Time()}{calculateSleepTime()}}
 {\footnotesize\ttfamily int calculate\+Sleep\+Time (\begin{DoxyParamCaption}\item[{int}]{difficulty }\end{DoxyParamCaption})}
 
-Calculate the sleep\+Time between two blinks of a L\+ED.
+Calculate the sleep\+Time between the on and off initialistation of the L\+ED.
 
 
 \begin{DoxyParams}{Parameters}
@@ -211,7 +211,7 @@ Calculate the sleep\+Time between two blinks of a L\+ED.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int sleep\+Time -\/ The sleep\+Time between two blinking L\+ED\textquotesingle{}s. 
+int sleep\+Time -\/ The sleep\+Time between the on and off initialistation of the L\+ED. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{led_8h_afb9ba6dbf695957481d9f3b53f207055}\label{led_8h_afb9ba6dbf695957481d9f3b53f207055}} 
 \index{led.\+h@{led.\+h}!clock\+Or\+Counter\+Clock\+Wise@{clock\+Or\+Counter\+Clock\+Wise}}
