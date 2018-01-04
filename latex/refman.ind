@@ -1,0 +1,345 @@
+\begin{theindex}
+
+  \item {\+\_\+\+\_\+attribute\+\_\+\+\_\+}
+    \subitem {button.\+cpp}, \hyperpage{21}
+    \subitem {player.\+cpp}, \hyperpage{47, 48}
+  \item {$\sim$\+Sound}
+    \subitem {Sound}, \hyperpage{15}
+
+  \indexspace
+
+  \item {A\+D\+P\+C\+M\+\_\+\+Decode}
+    \subitem {adpcm.\+c}, \hyperpage{17}
+    \subitem {adpcm.\+h}, \hyperpage{19}
+  \item {A\+D\+P\+C\+M\+\_\+\+Encode}
+    \subitem {adpcm.\+c}, \hyperpage{18}
+    \subitem {adpcm.\+h}, \hyperpage{19}
+  \item {A\+D\+P\+C\+M\+Sound}, \hyperpage{11}
+    \subitem {A\+D\+P\+C\+M\+Sound}, \hyperpage{11}
+    \subitem {fill\+Mono\+Buffer}, \hyperpage{12}
+    \subitem {fill\+Stereo\+Buffer}, \hyperpage{12}
+    \subitem {rewind}, \hyperpage{13}
+  \item {action}
+    \subitem {button.\+cpp}, \hyperpage{21}
+    \subitem {game.\+cpp}, \hyperpage{27}
+    \subitem {main.\+cpp}, \hyperpage{45}
+  \item {adpcm.\+c}, \hyperpage{17}
+    \subitem {A\+D\+P\+C\+M\+\_\+\+Decode}, \hyperpage{17}
+    \subitem {A\+D\+P\+C\+M\+\_\+\+Encode}, \hyperpage{18}
+    \subitem {Index\+Table}, \hyperpage{18}
+    \subitem {Step\+Size\+Table}, \hyperpage{18}
+  \item {adpcm.\+d}, \hyperpage{19}
+  \item {adpcm.\+h}, \hyperpage{19}
+    \subitem {A\+D\+P\+C\+M\+\_\+\+Decode}, \hyperpage{19}
+    \subitem {A\+D\+P\+C\+M\+\_\+\+Encode}, \hyperpage{19}
+
+  \indexspace
+
+  \item {B\+L\+UE}
+    \subitem {led.\+h}, \hyperpage{39}
+  \item {blink\+Led}
+    \subitem {led.\+cpp}, \hyperpage{36}
+    \subitem {led.\+h}, \hyperpage{41}
+  \item {blinking\+Clockwise}
+    \subitem {led.\+cpp}, \hyperpage{34}
+    \subitem {led.\+h}, \hyperpage{39}
+  \item {blinking\+Counter\+Clockwise}
+    \subitem {led.\+cpp}, \hyperpage{34}
+    \subitem {led.\+h}, \hyperpage{40}
+  \item {blinking\+Game}
+    \subitem {led.\+cpp}, \hyperpage{35}
+    \subitem {led.\+h}, \hyperpage{40}
+  \item {blinkingsequence}
+    \subitem {led.\+cpp}, \hyperpage{35}
+    \subitem {led.\+h}, \hyperpage{40}
+  \item {blue\+Led}
+    \subitem {led.\+cpp}, \hyperpage{33}
+  \item {button}
+    \subitem {button.\+cpp}, \hyperpage{20}
+    \subitem {game.\+cpp}, \hyperpage{25}
+  \item {button.\+cpp}, \hyperpage{20}
+    \subitem {\+\_\+\+\_\+attribute\+\_\+\+\_\+}, \hyperpage{21}
+    \subitem {action}, \hyperpage{21}
+    \subitem {button}, \hyperpage{20}
+    \subitem {configure\+Button\+Interrupt}, \hyperpage{21}
+    \subitem {mutex}, \hyperpage{21}
+    \subitem {wait\+For\+Button}, \hyperpage{21}
+  \item {button.\+d}, \hyperpage{22}
+  \item {button.\+h}, \hyperpage{22}
+    \subitem {configure\+Button\+Interrupt}, \hyperpage{22}
+    \subitem {wait\+For\+Button}, \hyperpage{22}
+  \item {Buzzer.\+h}, \hyperpage{23}
+    \subitem {buzzer\+\_\+bin}, \hyperpage{23}
+    \subitem {buzzer\+\_\+bin\+\_\+len}, \hyperpage{23}
+  \item {buzzer\+\_\+bin}
+    \subitem {Buzzer.\+h}, \hyperpage{23}
+  \item {buzzer\+\_\+bin\+\_\+len}
+    \subitem {Buzzer.\+h}, \hyperpage{23}
+  \item {buzzer\+Sound}
+    \subitem {game.\+cpp}, \hyperpage{25}
+    \subitem {game.\+h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {calculate\+Sleep\+Time}
+    \subitem {led.\+cpp}, \hyperpage{36}
+    \subitem {led.\+h}, \hyperpage{41}
+  \item {clock\+Or\+Counter\+Clock\+Wise}
+    \subitem {led.\+cpp}, \hyperpage{36}
+    \subitem {led.\+h}, \hyperpage{42}
+  \item {configure\+Button\+Interrupt}
+    \subitem {button.\+cpp}, \hyperpage{21}
+    \subitem {button.\+h}, \hyperpage{22}
+  \item {convert.\+cpp}, \hyperpage{24}
+    \subitem {main}, \hyperpage{24}
+    \subitem {run}, \hyperpage{24}
+  \item {cs43l22volume}
+    \subitem {player.\+cpp}, \hyperpage{48}
+
+  \indexspace
+
+  \item {difficulty}
+    \subitem {game.\+cpp}, \hyperpage{27}
+    \subitem {led.\+cpp}, \hyperpage{38}
+    \subitem {main.\+cpp}, \hyperpage{45}
+
+  \indexspace
+
+  \item {fill\+Mono\+Buffer}
+    \subitem {A\+D\+P\+C\+M\+Sound}, \hyperpage{12}
+    \subitem {Sound}, \hyperpage{15}
+  \item {fill\+Stereo\+Buffer}
+    \subitem {A\+D\+P\+C\+M\+Sound}, \hyperpage{12}
+    \subitem {Sound}, \hyperpage{15}
+
+  \indexspace
+
+  \item {G\+A\+M\+E\+O\+V\+ER}
+    \subitem {game.\+h}, \hyperpage{29}
+  \item {G\+R\+E\+EN}
+    \subitem {led.\+h}, \hyperpage{39}
+  \item {game}
+    \subitem {game.\+cpp}, \hyperpage{28}
+    \subitem {led.\+cpp}, \hyperpage{38}
+    \subitem {main.\+cpp}, \hyperpage{45}
+  \item {game.\+cpp}, \hyperpage{24}
+    \subitem {action}, \hyperpage{27}
+    \subitem {button}, \hyperpage{25}
+    \subitem {buzzer\+Sound}, \hyperpage{25}
+    \subitem {difficulty}, \hyperpage{27}
+    \subitem {game}, \hyperpage{28}
+    \subitem {game\+Over}, \hyperpage{26}
+    \subitem {game\+Play}, \hyperpage{26}
+    \subitem {highscore}, \hyperpage{28}
+    \subitem {highscore\+Sound}, \hyperpage{27}
+    \subitem {interaction}, \hyperpage{28}
+    \subitem {level}, \hyperpage{28}
+    \subitem {mutex}, \hyperpage{28}
+    \subitem {should\+Blink\+Again}, \hyperpage{27}
+  \item {game.\+d}, \hyperpage{28}
+  \item {game.\+h}, \hyperpage{28}
+    \subitem {buzzer\+Sound}, \hyperpage{29}
+    \subitem {G\+A\+M\+E\+O\+V\+ER}, \hyperpage{29}
+    \subitem {game\+Over}, \hyperpage{29}
+    \subitem {game\+Play}, \hyperpage{30}
+    \subitem {highscore\+Sound}, \hyperpage{31}
+    \subitem {should\+Blink\+Again}, \hyperpage{31}
+  \item {game\+Over}
+    \subitem {game.\+cpp}, \hyperpage{26}
+    \subitem {game.\+h}, \hyperpage{29}
+  \item {game\+Play}
+    \subitem {game.\+cpp}, \hyperpage{26}
+    \subitem {game.\+h}, \hyperpage{30}
+  \item {green\+Led}
+    \subitem {led.\+cpp}, \hyperpage{33}
+
+  \indexspace
+
+  \item {highscore}
+    \subitem {game.\+cpp}, \hyperpage{28}
+    \subitem {main.\+cpp}, \hyperpage{45}
+  \item {highscore.\+h}, \hyperpage{31}
+    \subitem {highscore\+\_\+bin}, \hyperpage{32}
+    \subitem {highscore\+\_\+bin\+\_\+len}, \hyperpage{32}
+  \item {highscore\+\_\+bin}
+    \subitem {highscore.\+h}, \hyperpage{32}
+  \item {highscore\+\_\+bin\+\_\+len}
+    \subitem {highscore.\+h}, \hyperpage{32}
+  \item {highscore\+Sound}
+    \subitem {game.\+cpp}, \hyperpage{27}
+    \subitem {game.\+h}, \hyperpage{31}
+
+  \indexspace
+
+  \item {i2c}
+    \subitem {player.\+cpp}, \hyperpage{46}
+  \item {Index\+Table}
+    \subitem {adpcm.\+c}, \hyperpage{18}
+  \item {init\+Leds}
+    \subitem {led.\+cpp}, \hyperpage{37}
+    \subitem {led.\+h}, \hyperpage{42}
+  \item {instance}
+    \subitem {Player}, \hyperpage{13}
+  \item {interaction}
+    \subitem {game.\+cpp}, \hyperpage{28}
+    \subitem {main.\+cpp}, \hyperpage{45}
+  \item {is\+Playing}
+    \subitem {Player}, \hyperpage{14}
+
+  \indexspace
+
+  \item {led.\+cpp}, \hyperpage{32}
+    \subitem {blink\+Led}, \hyperpage{36}
+    \subitem {blinking\+Clockwise}, \hyperpage{34}
+    \subitem {blinking\+Counter\+Clockwise}, \hyperpage{34}
+    \subitem {blinking\+Game}, \hyperpage{35}
+    \subitem {blinkingsequence}, \hyperpage{35}
+    \subitem {blue\+Led}, \hyperpage{33}
+    \subitem {calculate\+Sleep\+Time}, \hyperpage{36}
+    \subitem {clock\+Or\+Counter\+Clock\+Wise}, \hyperpage{36}
+    \subitem {difficulty}, \hyperpage{38}
+    \subitem {game}, \hyperpage{38}
+    \subitem {green\+Led}, \hyperpage{33}
+    \subitem {init\+Leds}, \hyperpage{37}
+    \subitem {level}, \hyperpage{38}
+    \subitem {on\+Off\+Blinking}, \hyperpage{37}
+    \subitem {orange\+Led}, \hyperpage{34}
+    \subitem {red\+Led}, \hyperpage{34}
+    \subitem {turn\+All\+Off}, \hyperpage{37}
+    \subitem {turn\+All\+On}, \hyperpage{37}
+  \item {led.\+d}, \hyperpage{38}
+  \item {led.\+h}, \hyperpage{38}
+    \subitem {B\+L\+UE}, \hyperpage{39}
+    \subitem {blink\+Led}, \hyperpage{41}
+    \subitem {blinking\+Clockwise}, \hyperpage{39}
+    \subitem {blinking\+Counter\+Clockwise}, \hyperpage{40}
+    \subitem {blinking\+Game}, \hyperpage{40}
+    \subitem {blinkingsequence}, \hyperpage{40}
+    \subitem {calculate\+Sleep\+Time}, \hyperpage{41}
+    \subitem {clock\+Or\+Counter\+Clock\+Wise}, \hyperpage{42}
+    \subitem {G\+R\+E\+EN}, \hyperpage{39}
+    \subitem {init\+Leds}, \hyperpage{42}
+    \subitem {O\+R\+A\+N\+GE}, \hyperpage{39}
+    \subitem {on\+Off\+Blinking}, \hyperpage{42}
+    \subitem {R\+ED}, \hyperpage{39}
+    \subitem {turn\+All\+Off}, \hyperpage{42}
+    \subitem {turn\+All\+On}, \hyperpage{43}
+  \item {level}
+    \subitem {game.\+cpp}, \hyperpage{28}
+    \subitem {led.\+cpp}, \hyperpage{38}
+    \subitem {main.\+cpp}, \hyperpage{45}
+  \item {lrck}
+    \subitem {player.\+cpp}, \hyperpage{46}
+
+  \indexspace
+
+  \item {main}
+    \subitem {convert.\+cpp}, \hyperpage{24}
+    \subitem {main.\+cpp}, \hyperpage{44}
+  \item {main.\+cpp}, \hyperpage{43}
+    \subitem {action}, \hyperpage{45}
+    \subitem {difficulty}, \hyperpage{45}
+    \subitem {game}, \hyperpage{45}
+    \subitem {highscore}, \hyperpage{45}
+    \subitem {interaction}, \hyperpage{45}
+    \subitem {level}, \hyperpage{45}
+    \subitem {main}, \hyperpage{44}
+    \subitem {main\+Initialisation}, \hyperpage{44}
+    \subitem {mutex}, \hyperpage{45}
+    \subitem {re\+Initialisation}, \hyperpage{44}
+  \item {main.\+d}, \hyperpage{46}
+  \item {main\+Initialisation}
+    \subitem {main.\+cpp}, \hyperpage{44}
+  \item {mclk}
+    \subitem {player.\+cpp}, \hyperpage{47}
+  \item {mutex}
+    \subitem {button.\+cpp}, \hyperpage{21}
+    \subitem {game.\+cpp}, \hyperpage{28}
+    \subitem {main.\+cpp}, \hyperpage{45}
+
+  \indexspace
+
+  \item {O\+R\+A\+N\+GE}
+    \subitem {led.\+h}, \hyperpage{39}
+  \item {on\+Off\+Blinking}
+    \subitem {led.\+cpp}, \hyperpage{37}
+    \subitem {led.\+h}, \hyperpage{42}
+  \item {orange\+Led}
+    \subitem {led.\+cpp}, \hyperpage{34}
+
+  \indexspace
+
+  \item {play}
+    \subitem {Player}, \hyperpage{14}
+  \item {Player}, \hyperpage{13}
+    \subitem {instance}, \hyperpage{13}
+    \subitem {is\+Playing}, \hyperpage{14}
+    \subitem {play}, \hyperpage{14}
+  \item {player.\+cpp}, \hyperpage{46}
+    \subitem {\+\_\+\+\_\+attribute\+\_\+\+\_\+}, \hyperpage{47, 48}
+    \subitem {cs43l22volume}, \hyperpage{48}
+    \subitem {i2c}, \hyperpage{46}
+    \subitem {lrck}, \hyperpage{46}
+    \subitem {mclk}, \hyperpage{47}
+    \subitem {reset}, \hyperpage{47}
+    \subitem {scl}, \hyperpage{47}
+    \subitem {sclk}, \hyperpage{47}
+    \subitem {sda}, \hyperpage{47}
+    \subitem {sdin}, \hyperpage{47}
+  \item {player.\+d}, \hyperpage{48}
+  \item {player.\+h}, \hyperpage{48}
+
+  \indexspace
+
+  \item {R\+E\+A\+D\+M\+E.\+md}, \hyperpage{48}
+  \item {R\+ED}
+    \subitem {led.\+h}, \hyperpage{39}
+  \item {re\+Initialisation}
+    \subitem {main.\+cpp}, \hyperpage{44}
+  \item {red\+Led}
+    \subitem {led.\+cpp}, \hyperpage{34}
+  \item {reset}
+    \subitem {player.\+cpp}, \hyperpage{47}
+  \item {rewind}
+    \subitem {A\+D\+P\+C\+M\+Sound}, \hyperpage{13}
+    \subitem {Sound}, \hyperpage{16}
+  \item {run}
+    \subitem {convert.\+cpp}, \hyperpage{24}
+
+  \indexspace
+
+  \item {scl}
+    \subitem {player.\+cpp}, \hyperpage{47}
+  \item {sclk}
+    \subitem {player.\+cpp}, \hyperpage{47}
+  \item {sda}
+    \subitem {player.\+cpp}, \hyperpage{47}
+  \item {sdin}
+    \subitem {player.\+cpp}, \hyperpage{47}
+  \item {should\+Blink\+Again}
+    \subitem {game.\+cpp}, \hyperpage{27}
+    \subitem {game.\+h}, \hyperpage{31}
+  \item {Sound}, \hyperpage{14}
+    \subitem {$\sim$\+Sound}, \hyperpage{15}
+    \subitem {fill\+Mono\+Buffer}, \hyperpage{15}
+    \subitem {fill\+Stereo\+Buffer}, \hyperpage{15}
+    \subitem {rewind}, \hyperpage{16}
+  \item {Step\+Size\+Table}
+    \subitem {adpcm.\+c}, \hyperpage{18}
+
+  \indexspace
+
+  \item {turn\+All\+Off}
+    \subitem {led.\+cpp}, \hyperpage{37}
+    \subitem {led.\+h}, \hyperpage{42}
+  \item {turn\+All\+On}
+    \subitem {led.\+cpp}, \hyperpage{37}
+    \subitem {led.\+h}, \hyperpage{43}
+
+  \indexspace
+
+  \item {wait\+For\+Button}
+    \subitem {button.\+cpp}, \hyperpage{21}
+    \subitem {button.\+h}, \hyperpage{22}
+
+\end{theindex}
